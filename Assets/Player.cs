@@ -5,8 +5,9 @@ using Cinemachine;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private float speed=0f,lookAngle=0f,angle=0f,joomSpeed,walkSpeed,runSpeed,cameraJoomIn,cameraJoomOut,cameraJoom3;
-    private float inputX,inputY,realInputX,realInputY;
+    private float speed=0f,lookAngle=0f,angle=0f,joomSpeed
+        ,walkSpeed,runSpeed,cameraJoomIn,cameraJoomOut,joomInSpeed,myGunDeley;
+    private float inputX,inputY,realInputX,realInputY,cameraJoom,gunDeley,beforeAngle,LerpAngle,turnSpeed;
     private Vector2 mousePos;
     private int anglePlayer,anglePlayer2;
     private Animator myAnimator;
@@ -19,6 +20,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private CinemachineVirtualCamera vcam;
     private Rigidbody2D myRigidbody2D;
+    [SerializeField]
+    private ParticleSystem myParticleSystem;
 
     void Start()
     {
@@ -28,13 +31,24 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        
+        if(Input.GetMouseButton(0)&&gunDeley>=myGunDeley&&!Run){
+            gunDeley=0f;
+            myParticleSystem.Play();
+        }
+        gunDeley+=Time.deltaTime;
+
+
+
+
         joom=Input.GetMouseButton(1);
         myAnimator.SetBool("Joom",joom);
         if(Input.GetKey(KeyCode.LeftShift)){
             myAnimator.SetBool("Run",true);
             Run=true;
             joom=false;
-            vcam.m_Lens.OrthographicSize = cameraJoom3;
+            cameraJoom = cameraJoomIn;
+            
             speed=runSpeed;
         }
         if(Input.GetKeyUp(KeyCode.LeftShift)){
@@ -55,14 +69,21 @@ public class Player : MonoBehaviour
         }
         if(!Run){
             speed=joom?joomSpeed:walkSpeed;
-            vcam.m_Lens.OrthographicSize = joom?cameraJoomOut:cameraJoomIn;
+            cameraJoom = joom?cameraJoomOut:cameraJoomIn;
         }
         
+        vcam.m_Lens.OrthographicSize = Mathf.Lerp(vcam.m_Lens.OrthographicSize,cameraJoom,Time.deltaTime*joomInSpeed);
         SmoothWalkLookMouse2();
         
     }
     private void FixedUpdate(){
         Move();
+        float hi = Mathf.Abs(lookAngle-beforeAngle);
+        //if(hi<1.2f)hi=0f;
+        LerpAngle = Mathf.Lerp(LerpAngle,Mathf.Abs(hi),(hi<0.8f)?0.1f:0.5f);
+        if(LerpAngle>2f)LerpAngle=2f;
+        myAnimator.SetFloat("Turn",LerpAngle);
+        beforeAngle=lookAngle;
     }
     private void LookMouseMode(){
         mousePos = Input.mousePosition;
@@ -73,30 +94,15 @@ public class Player : MonoBehaviour
         lookAngle+=180f;
         playerTransform.localRotation = Quaternion.Euler(0f,lookAngle,0f);
         angleTransform.localRotation = Quaternion.Euler(0f,0f,lookAngle);
-    }
-    private void SmoothWalkLookMouse(){//하.. 이제안씀 블랜드트리 2d라니
-        angle = Mathf.Atan2(inputY,inputX) * Mathf.Rad2Deg;
-        anglePlayer = (int)(((angle+180f)/360f)*8);
-        anglePlayer2 = (int)(((lookAngle+22.5f)/360f)*8);
-        if(anglePlayer2==8)
-            anglePlayer2=0;
-        anglePlayer+=anglePlayer2;
-        anglePlayer%=8;
-        if(inputX==0&&inputY==0){
-            anglePlayer=8;
-            if(myAnimator.GetBool("Move")){
-                myAnimator.SetBool("Move",false);
-                myAnimator.SetTrigger("Oh");
-            }
+        if(inputX!=0||inputY!=0){
+            myAnimator.SetBool("Stop",false);
+        }else{
+            myAnimator.SetBool("Stop",true);
         }
-        else{
-            if(!myAnimator.GetBool("Move")){
-                myAnimator.SetBool("Move",true);
-                myAnimator.SetTrigger("Oh");
-            }
-        }
-
-        myAnimator.SetInteger("Angle22",anglePlayer);
+        
+        // if(Mathf.Abs((lookAngle-beforeAngle))/2f>45f)
+        //     beforeAngle = lookAngle;
+        
     }
     private void SmoothWalkLookMouse2(){
         Vector3 lookV;
@@ -112,12 +118,16 @@ public class Player : MonoBehaviour
         realInputX = Mathf.Lerp(realInputX,inputX,20f*Time.deltaTime);
         realInputY = Mathf.Lerp(realInputY,inputY,20f*Time.deltaTime);
         if(inputX==0&&inputY==0){
+            myAnimator.SetBool("Stop",true);
             realInputX=0f;
             realInputY=0f;
+        }else{
+            myAnimator.SetBool("Stop",false);
         }
+        
 
         rote = (new Vector2(realInputX,realInputY)).normalized;
-        transform.Translate((new Vector2(inputX,inputY)).normalized*speed*Time.deltaTime);
+        transform.Translate((new Vector2(inputX,inputY)).normalized*speed*0.02f);
         angle = Mathf.Atan2(realInputX,realInputY) * Mathf.Rad2Deg;
     }
 }
