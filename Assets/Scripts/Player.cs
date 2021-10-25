@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Camera myCamera;
     [SerializeField]
-    private Transform playerTransform,angleTransform;
+    private Transform playerTransform,angleTransform,playerCenter,casingOutlet;
     private Vector3 rote;
     private bool Run,joom;
     [SerializeField]
@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
         
         if(Input.GetMouseButton(0)&&gunDeley>=myGunDeley&&!Run){
             gunDeley=0f;
+            AllPoolManager.Instance.GetObjPos(0,casingOutlet).gameObject.SetActive(true);
             myParticleSystem.Play();
         }
         gunDeley+=Time.deltaTime;
@@ -88,12 +89,12 @@ public class Player : MonoBehaviour
     private void LookMouseMode(){
         mousePos = Input.mousePosition;
         mousePos = myCamera.ScreenToWorldPoint(mousePos);
-        mousePos = (Vector2)transform.position-mousePos;
+        mousePos = (Vector2)playerCenter.position-mousePos;
         mousePos.Normalize();
         lookAngle = Mathf.Atan2(mousePos.x,mousePos.y) * Mathf.Rad2Deg;
         lookAngle+=180f;
-        playerTransform.localRotation = Quaternion.Euler(0f,lookAngle,0f);
-        angleTransform.localRotation = Quaternion.Euler(0f,0f,lookAngle);
+        playerTransform.localRotation = Quaternion.Euler(0f,lookAngle-16.37f,0f);
+        angleTransform.localRotation = Quaternion.Euler(0f,0f,lookAngle-16.37f);
         if(inputX!=0||inputY!=0){
             myAnimator.SetBool("Stop",false);
         }else{
