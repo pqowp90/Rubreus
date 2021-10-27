@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Camera myCamera;
     [SerializeField]
-    private Transform playerTransform,angleTransform,playerCenter,casingOutlet;
+    private Transform playerTransform,angleTransform,playerCenter,casingOutlet,shootingPos;
     private Vector3 rote;
     private bool Run,joom;
     [SerializeField]
@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
         if(Input.GetMouseButton(0)&&gunDeley>=myGunDeley&&!Run){
             gunDeley=0f;
             AllPoolManager.Instance.GetObjPos(0,casingOutlet).gameObject.SetActive(true);
+            AllPoolManager.Instance.GetObjPos(1,shootingPos).gameObject.SetActive(true);
             myParticleSystem.Play();
         }
         gunDeley+=Time.deltaTime;

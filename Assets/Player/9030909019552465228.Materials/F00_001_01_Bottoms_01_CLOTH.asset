@@ -8,9 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: F00_001_01_Bottoms_01_CLOTH
-  m_Shader: {fileID: 4800000, guid: 1a97144e4ad27a04aafd70f7b915cedb, type: 3}
-  m_ShaderKeywords: MTOON_OUTLINE_COLOR_FIXED MTOON_OUTLINE_WIDTH_WORLD _ALPHATEST_ON
-    _MAPPING_LATITUDE_LONGITUDE_LAYOUT _NORMALMAP
+  m_Shader: {fileID: 4800000, guid: 650dd9526735d5b46b79224bc6e94025, type: 3}
+  m_ShaderKeywords: _ALPHATEST_ON _NORMALMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -25,8 +24,24 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: f9f5f23792bd60f43b0902ad536b8d5d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 34d1017f95530b445bfaaaeffa59812d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DownTex:
@@ -69,11 +84,19 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OutlineWidthTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OutlineWidthTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -109,6 +132,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SphereAdd:
         m_Texture: {fileID: 2800000, guid: 90cf3a944116d2248bc74368c6e3f3a9, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -129,21 +156,39 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _AlphaClip: 1
     - _AlphaMode: 0
     - _AlphaToMask: 1
+    - _Blend: 0
     - _BlendMode: 1
     - _BlendOp: 0
     - _BumpScale: 1
     - _CameraFadingEnabled: 0
     - _CameraFarFadeDistance: 2
     - _CameraNearFadeDistance: 1
+    - _ClearCoatMask: 0
+    - _ClearCoatSmoothness: 0
     - _ColorMask: 15
     - _Cull: 2
     - _CullMode: 0
     - _Cutoff: 0.5
     - _DebugMode: 0
     - _DepthDistance: 0.5
+    - _DetailAlbedoMapScale: 1
+    - _DetailNormalMapScale: 1
     - _DistortionBlend: 0.5
     - _DistortionEnabled: 0
     - _DistortionStrength: 1
@@ -154,13 +199,16 @@ Material:
     - _EmisPulseMin: 0
     - _EmisPulseSpeed: 2
     - _EmissionEnabled: 0
+    - _EnvironmentReflections: 1
     - _Exposure: 1
     - _FlipbookMode: 0
     - _FoamSmooth: 0.02
     - _FoamSpread: 2
     - _FoamStrength: 0.8
     - _GiEqualization: 0.9
+    - _GlossMapScale: 0
     - _Glossiness: 0.5
+    - _GlossyReflections: 0
     - _ImageType: 0
     - _IndirectLightIntensity: 0.1
     - _Layout: 0
@@ -178,6 +226,7 @@ Material:
     - _Metallic: 0
     - _MirrorOnBack: 0
     - _Mode: 0
+    - _OcclusionStrength: 1
     - _Offset1: 0
     - _Offset2: 0
     - _Outline: 1
@@ -187,9 +236,12 @@ Material:
     - _OutlineScaledMaxDistance: 1
     - _OutlineWidth: 0.887
     - _OutlineWidthMode: 1
+    - _Parallax: 0.005
+    - _QueueOffset: 0
     - _RampSmooth: 0.1
     - _RampThreshold: 0.5
     - _ReceiveShadowRate: 1
+    - _ReceiveShadows: 1
     - _RenderQueueOffset: 0
     - _RimFresnelPower: 1
     - _RimLift: 0
@@ -197,15 +249,19 @@ Material:
     - _RimMax: 1
     - _RimMin: 0.5
     - _Rotation: 0
+    - _SampleGI: 0
     - _ShadeShift: -1
     - _ShadeToony: 1
     - _ShadingGradeRate: 1
     - _ShadingShiftFactor: -0.05
     - _ShadingShiftTexScale: 1
     - _ShadingToonyFactor: 0.95
+    - _Smoothness: 0
+    - _SmoothnessTextureChannel: 0
     - _SoftParticlesEnabled: 0
     - _SoftParticlesFarFadeDistance: 1
     - _SoftParticlesNearFadeDistance: 0
+    - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendOutline: 0
     - _StairNum: 2
@@ -214,6 +270,7 @@ Material:
     - _StencilOp: 0
     - _StencilReadMask: 255
     - _StencilWriteMask: 255
+    - _Surface: 0
     - _TexLod: 5
     - _TransparentWithZWrite: 0
     - _UVWaveAmplitude: 0.05
@@ -229,10 +286,12 @@ Material:
     - _WaveFrequency: 1
     - _WaveHeight: 0.1
     - _WaveSpeed: 2
+    - _WorkflowMode: 1
     - _ZSmooth: -0.5
     - _ZWrite: 1
     - __dummy__: 0
     m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _CameraFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DepthColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
@@ -245,5 +304,6 @@ Material:
     - _SColor: {r: 0.29999998, g: 0.29999998, b: 0.29999998, a: 1}
     - _ShadeColor: {r: 0.8117647, g: 0.8392157, b: 0.96862745, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Tint: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
   m_BuildTextureStacks: []
