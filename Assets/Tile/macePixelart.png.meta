@@ -1,0 +1,1320 @@
+fileFormatVersion: 2
+guid: 1ad9e93387bf8da4ea04cf08e1028cd9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5299169946757130765
+    second: macePixelart_0
+  - first:
+      213: 5990927277031253446
+    second: macePixelart_1
+  - first:
+      213: 7193360701833714807
+    second: macePixelart_2
+  - first:
+      213: 7125778859815012189
+    second: macePixelart_3
+  - first:
+      213: 3383777698067333621
+    second: macePixelart_4
+  - first:
+      213: 3985958905271550398
+    second: macePixelart_5
+  - first:
+      213: 5635037658090509826
+    second: macePixelart_6
+  - first:
+      213: 8799760402158595588
+    second: macePixelart_7
+  - first:
+      213: -2452815357725346582
+    second: macePixelart_8
+  - first:
+      213: 7195696606791375476
+    second: macePixelart_9
+  - first:
+      213: -6541426853000969906
+    second: macePixelart_10
+  - first:
+      213: -9009790924983378835
+    second: macePixelart_11
+  - first:
+      213: 1913486958295346704
+    second: macePixelart_12
+  - first:
+      213: -3933887055509429045
+    second: macePixelart_13
+  - first:
+      213: 5929199331493316855
+    second: macePixelart_14
+  - first:
+      213: -1493431451730049037
+    second: macePixelart_15
+  - first:
+      213: 5871411862084227459
+    second: macePixelart_16
+  - first:
+      213: 425528291639165881
+    second: macePixelart_17
+  - first:
+      213: -975478193766693181
+    second: macePixelart_18
+  - first:
+      213: -1390842672723187296
+    second: macePixelart_19
+  - first:
+      213: 3768148598723218800
+    second: macePixelart_20
+  - first:
+      213: -2258700436887651486
+    second: macePixelart_21
+  - first:
+      213: 6206028976916560517
+    second: macePixelart_22
+  - first:
+      213: 8554886419884271797
+    second: macePixelart_23
+  - first:
+      213: -5756989745498633802
+    second: macePixelart_24
+  - first:
+      213: -5345428584679156725
+    second: macePixelart_25
+  - first:
+      213: 7803914888899035750
+    second: macePixelart_26
+  - first:
+      213: 4901863148506250586
+    second: macePixelart_27
+  - first:
+      213: -3014037980007377852
+    second: macePixelart_28
+  - first:
+      213: -6191870456335026988
+    second: macePixelart_29
+  - first:
+      213: 8093302913392673109
+    second: macePixelart_30
+  - first:
+      213: 288694929787153527
+    second: macePixelart_31
+  - first:
+      213: -6045762339843445927
+    second: macePixelart_32
+  - first:
+      213: -9007505922790441370
+    second: macePixelart_33
+  - first:
+      213: 4737935572861912351
+    second: macePixelart_34
+  - first:
+      213: 986924437254992790
+    second: macePixelart_35
+  - first:
+      213: 5371524817781458266
+    second: macePixelart_36
+  - first:
+      213: -1522115583732198935
+    second: macePixelart_37
+  - first:
+      213: -4535315155031071952
+    second: macePixelart_38
+  - first:
+      213: -1531857468707701045
+    second: macePixelart_39
+  - first:
+      213: -4169496307021872651
+    second: macePixelart_40
+  - first:
+      213: -3849552009836167805
+    second: macePixelart_41
+  - first:
+      213: -16346684427600683
+    second: macePixelart_42
+  - first:
+      213: 7392223796148816035
+    second: macePixelart_43
+  - first:
+      213: -1467876353854824106
+    second: macePixelart_44
+  - first:
+      213: -2900825967153838614
+    second: macePixelart_45
+  - first:
+      213: 3063679435254206818
+    second: macePixelart_46
+  - first:
+      213: -5773075856399860136
+    second: macePixelart_47
+  - first:
+      213: -3340562528465519132
+    second: macePixelart_48
+  - first:
+      213: -7013015917144785808
+    second: macePixelart_49
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 72
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: macePixelart_0
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 433
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0a62e88dfe6a8940800000000000000
+      internalID: 5299169946757130765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_1
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 433
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c565aefd9c042350800000000000000
+      internalID: 5990927277031253446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_2
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 433
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77c9d0e3273f3d360800000000000000
+      internalID: 7193360701833714807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_3
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 433
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5703477e1ad3e260800000000000000
+      internalID: 7125778859815012189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_4
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 433
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f1413c63e795fe20800000000000000
+      internalID: 3383777698067333621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_5
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 361
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb1040e7188f05730800000000000000
+      internalID: 3985958905271550398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_6
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 361
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2061f62f4eca33e40800000000000000
+      internalID: 5635037658090509826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_7
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 361
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40e263f66770f1a70800000000000000
+      internalID: 8799760402158595588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_8
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 361
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae4782f7d69d5fdd0800000000000000
+      internalID: -2452815357725346582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_9
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 361
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47a984f70ff3cd360800000000000000
+      internalID: 7195696606791375476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_10
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 361
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e410da66fee2835a0800000000000000
+      internalID: -6541426853000969906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_11
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 361
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6cd3dfb3eac6f280800000000000000
+      internalID: -9009790924983378835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 289
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01e698f10421e8a10800000000000000
+      internalID: 1913486958295346704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_13
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 289
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc46addc0960869c0800000000000000
+      internalID: -3933887055509429045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_14
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 289
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f88424b06fb84250800000000000000
+      internalID: 5929199331493316855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_15
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 289
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f70c37d104464be0800000000000000
+      internalID: -1493431451730049037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_16
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 289
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3819b810bf17b7150800000000000000
+      internalID: 5871411862084227459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_17
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 289
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b308090ab7c7e500800000000000000
+      internalID: 425528291639165881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_18
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 289
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c6856640c76672f0800000000000000
+      internalID: -975478193766693181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_19
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 289
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a921e945fbb2bce0800000000000000
+      internalID: -1390842672723187296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 217
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d88cf9f272b4430800000000000000
+      internalID: 3768148598723218800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_21
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 217
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26bba457beb77a0e0800000000000000
+      internalID: -2258700436887651486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_22
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 217
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58a74ea397e302650800000000000000
+      internalID: 6206028976916560517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_23
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 217
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b8e3078fdf09b670800000000000000
+      internalID: 8554886419884271797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_24
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 217
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b9ccfb04501b10b0800000000000000
+      internalID: -5756989745498633802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_25
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 217
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b04daf5060931d5b0800000000000000
+      internalID: -5345428584679156725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_26
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 217
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 662853a9e331d4c60800000000000000
+      internalID: 7803914888899035750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_27
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 217
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5dfa48ff8ae60440800000000000000
+      internalID: 4901863148506250586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_28
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 217
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 444df1e1d6cfb26d0800000000000000
+      internalID: -3014037980007377852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_29
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 217
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d43aea30ae021aa0800000000000000
+      internalID: -6191870456335026988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_30
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 145
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 551876c9e10315070800000000000000
+      internalID: 8093302913392673109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_31
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 145
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77c6b625286a10400800000000000000
+      internalID: 288694929787153527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_32
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 145
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95b62390f23291ca0800000000000000
+      internalID: -6045762339843445927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_33
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 145
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66e39d74619eef280800000000000000
+      internalID: -9007505922790441370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_34
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 145
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f150f150d4780c140800000000000000
+      internalID: 4737935572861912351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_35
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 145
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6937cb6fb8242bd00800000000000000
+      internalID: 986924437254992790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_36
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 145
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a550f0abc5d7b8a40800000000000000
+      internalID: 5371524817781458266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_37
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 73
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e15e8ce0fb50eae0800000000000000
+      internalID: -1522115583732198935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_38
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 73
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0336de745e25f01c0800000000000000
+      internalID: -4535315155031071952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_39
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 73
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcef5239fbfbdbae0800000000000000
+      internalID: -1531857468707701045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_40
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 73
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f188af1339f226c0800000000000000
+      internalID: -4169496307021872651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_41
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 73
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38df255c7d4a39ac0800000000000000
+      internalID: -3849552009836167805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_42
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 73
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dcff61f6cce5cff0800000000000000
+      internalID: -16346684427600683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_43
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 73
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a8c3ad7064769660800000000000000
+      internalID: 7392223796148816035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_44
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 73
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 651a94abb3e01abe0800000000000000
+      internalID: -1467876353854824106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_45
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 73
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae50190f6223eb7d0800000000000000
+      internalID: -2900825967153838614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_46
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 1
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2611ffbd630648a20800000000000000
+      internalID: 3063679435254206818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_47
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ef6ed781ae1efa0800000000000000
+      internalID: -5773075856399860136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_48
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 1
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4edf4d45410f3a1d0800000000000000
+      internalID: -3340562528465519132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: macePixelart_49
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07cbc6e0e23ccae90800000000000000
+      internalID: -7013015917144785808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

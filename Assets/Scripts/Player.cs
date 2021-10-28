@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         
-        if(Input.GetMouseButton(0)&&gunDeley>=myGunDeley&&!Run){
+        if(Input.GetMouseButton(0)&&gunDeley>=myGunDeley&&!myAnimator.GetBool("Run")){
             gunDeley=0f;
             AllPoolManager.Instance.GetObjPos(0,casingOutlet).gameObject.SetActive(true);
             AllPoolManager.Instance.GetObjPos(1,shootingPos).gameObject.SetActive(true);
@@ -45,19 +45,17 @@ public class Player : MonoBehaviour
 
         joom=Input.GetMouseButton(1);
         myAnimator.SetBool("Joom",joom);
-        if(Input.GetKey(KeyCode.LeftShift)){
-            myAnimator.SetBool("Run",true);
-            Run=true;
+        bool isRun = Input.GetKey(KeyCode.LeftShift);
+        if(isRun){
+
             joom=false;
             cameraJoom = cameraJoomIn;
             
             speed=runSpeed;
         }
-        if(Input.GetKeyUp(KeyCode.LeftShift)){
-            myAnimator.SetBool("Run",false);
-            Run=false;
-            
-        }
+        myAnimator.SetBool("Run",isRun);
+        Run=isRun;
+        
         if(inputX!=0||inputY!=0){
             if(Run){
                 playerTransform.localRotation = Quaternion.Euler(0f,angle,0f);

@@ -8,13 +8,19 @@ public class Enemy1 : MonoBehaviour
     private NavMeshAgent agent;
     [SerializeField]
     Transform target;
-    void Start()	{
+    [SerializeField]
+    private float maxHp,hp;
+    private HpBar hpBar;
+    void Awake()	{
+        hpBar = GetComponent<HpBar>();
 		agent = GetComponent<NavMeshAgent>();
 		agent.updateRotation = false;
 		agent.updateUpAxis = false;
         agent.SetDestination(target.position);
 	}
-
+    private void OnEnable(){
+        hp=maxHp;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -23,6 +29,14 @@ public class Enemy1 : MonoBehaviour
         }
         else{
             agent.SetDestination(transform.position);
+        }
+    }
+    public void Damaged(float damage){
+        hp -= damage;
+        hpBar.SetHp(hp, maxHp);
+        if(hp<=0){
+            hpBar.DestroyHpbar();
+            Destroy(gameObject);
         }
     }
 }
