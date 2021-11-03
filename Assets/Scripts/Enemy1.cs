@@ -21,7 +21,6 @@ public class Enemy1 : MonoBehaviour
     private void OnEnable(){
         hp=maxHp;
     }
-    // Update is called once per frame
     void Update()
     {
         if(agent.destination!=target.transform.position){

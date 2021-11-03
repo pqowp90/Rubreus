@@ -11,14 +11,12 @@ public class HpBar : MonoBehaviour
     private RectTransform hpBarT;
     private Image hpbar;
     
-    // Start is called before the first frame update
     void Start()
     {
         hpBarT = Instantiate(hpBarPrefab , canvas).GetComponent<RectTransform>();
-        hpbar = hpBarT.GetComponentInChildren<Image>();
+        hpbar = hpBarT.GetChild(0).GetComponentInChildren<Image>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector3 _hpBarPos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x,transform.position.y+0.5f,0f));
@@ -26,6 +24,7 @@ public class HpBar : MonoBehaviour
     }
     public void SetHp(float hp, float maxHp){
         hpbar.fillAmount = hp/maxHp;
+        Debug.Log(hpbar.gameObject.name);
     }
     public void DestroyHpbar(){
         Destroy(hpBarT.gameObject);
