@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Transform playerTransform,angleTransform,playerCenter,casingOutlet,shootingPos;
     private Vector3 rote;
+    [SerializeField]
     private bool Run,joom;
     [SerializeField]
     private CinemachineVirtualCamera vcam;

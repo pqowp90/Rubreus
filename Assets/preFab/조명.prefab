@@ -143,7 +143,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1.41
-  m_PointLightOuterRadius: 5.31
+  m_PointLightOuterRadius: 3.75
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 7285129897178150025}
   - component: {fileID: 4332293828261133119}
   m_Layer: 0
-  m_Name: "\uD3EC\uD0D1\uBC11"
+  m_Name: "\uC870\uBA85"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
