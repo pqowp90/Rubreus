@@ -5,6 +5,8 @@ using UnityEngine;
 public class PoTap : MonoBehaviour
 {
     [SerializeField]
+    private Transform chukTransform;
+    [SerializeField]
     private float myGunDeley;
     private float gunDeley;
     [SerializeField]
@@ -14,11 +16,19 @@ public class PoTap : MonoBehaviour
     private Transform playerPos;
     [SerializeField]
     private ParticleSystem myParticleSystem;
+    private Transform targetTransform;
     void Start()
     {
         
         playerPos = FindObjectOfType<Player>().transform;
-        InvokeRepeating("FindTarger",0f, 1f);
+        InvokeRepeating("FindTarger",Random.Range(0f,1f), 0.5f);
+    }
+    private void LookAtTarget(){
+        if(targetTransform==null)return;
+        Vector3 targetPos = targetTransform.position;
+        targetPos-=transform.position;
+        float lookAngle = Mathf.Atan2(targetPos.y,targetPos.x)* Mathf.Rad2Deg;
+        chukTransform.eulerAngles = new Vector3(0f,0f,lookAngle);
     }
     private void FindTarger(){
         Transform near=null;
@@ -36,8 +46,7 @@ public class PoTap : MonoBehaviour
             }
         }
         if(near==null)return;
-        Debug.Log("사라져라 뿅~!");
-        Destroy(near.gameObject);
+        targetTransform = near;
         // }
         // Transform near = cols[0].transform;
         // float nearRange = Vector3.Distance(playerPos.position , near.position);
@@ -55,12 +64,13 @@ public class PoTap : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetMouseButton(0)&&gunDeley>=myGunDeley){
+        if(targetTransform!=null&&gunDeley>=myGunDeley){
             gunDeley=0f;
-            AllPoolManager.Instance.GetObjPos(0,casingOutlet).gameObject.SetActive(true);
+            AllPoolManager.Instance.GetObjPos(3,casingOutlet).gameObject.SetActive(true);
             AllPoolManager.Instance.GetObjPos(1,shootingPos).gameObject.SetActive(true);
             myParticleSystem.Play();
         }
         gunDeley+=Time.deltaTime;
+        LookAtTarget();
     }
 }

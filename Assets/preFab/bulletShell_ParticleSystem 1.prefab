@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7855808765570879643}
   - component: {fileID: 2534910164582758467}
   m_Layer: 0
-  m_Name: bulletShell_ParticleSystem
+  m_Name: bulletShell_ParticleSystem 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4845,7 +4845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 4
-  index: 0
+  index: 3
 --- !u!82 &7855808765570879643
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4858,7 +4858,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c3c5849a5dcbcaa469f76a8f73944275, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.07
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4902,7 +4902,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
