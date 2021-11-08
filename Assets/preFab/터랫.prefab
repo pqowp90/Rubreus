@@ -5037,6 +5037,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2914133532198898811}
+  - {fileID: 2084318740544327935}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5103,11 +5104,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ee42d6ca0e78d4fac3f91c1ed3575b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chukTransform: {fileID: 2084318740544327935}
+  whatLayerMask:
+    serializedVersion: 2
+    m_Bits: 2048
   myGunDeley: 0.5
+  range: 10
   casingOutlet: {fileID: 8438663439148991238}
   shootingPos: {fileID: 3874993081505121511}
-  range: 10
+  chukTransform: {fileID: 2084318740544327935}
   myParticleSystem: {fileID: 1884446680828550873}
 --- !u!1 &2813903790737621698
 GameObject:
@@ -14771,8 +14775,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.005, y: -0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2084318740544327935}
+  m_Children: []
   m_Father: {fileID: 3076262892904536882}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14841,12 +14844,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8053301395233982396}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.0049991608, y: -0.059999943, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1690541621081808625}
-  m_Father: {fileID: 2914133532198898811}
-  m_RootOrder: 0
+  m_Father: {fileID: 3076262892904536882}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8369557585461816947
 GameObject:

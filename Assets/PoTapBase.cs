@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PoTapBase : MonoBehaviour
 {
+    public LayerMask whatLayerMask;
     [SerializeField]
     protected float myGunDeley,range;
     protected float gunDeley;
@@ -16,7 +17,14 @@ public class PoTapBase : MonoBehaviour
     {
         
         playerPos = FindObjectOfType<Player>().transform;
-        InvokeRepeating("FindTarger",Random.Range(0f,1f), 0.5f);
+        StartCoroutine(RepeatingFind());
+    }
+    private IEnumerator RepeatingFind(){
+        yield return new WaitForSeconds(Random.Range(0f,1f));
+        while(true){
+            FindTarger(transform.position, ref targetTransform);
+            yield return new WaitForSeconds(0.5f);
+        }
     }
     protected private void LookAtTarget(){
         if(targetTransform==null)return;
@@ -25,15 +33,14 @@ public class PoTapBase : MonoBehaviour
         float lookAngle = Mathf.Atan2(targetPos.y,targetPos.x)* Mathf.Rad2Deg;
         chukTransform.eulerAngles = new Vector3(0f,0f,lookAngle);
     }
-    protected private void FindTarger(){
+    protected virtual private void FindTarger(Vector3 pos, ref Transform _targetTransform){
         Transform near=null;
+        
         float nearRange, nearRange2=range;
-        Debug.Log("dd");
-        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, range);
+        Collider2D[] cols = Physics2D.OverlapCircleAll(pos, range,whatLayerMask);
         if(cols.Length==0)return;
         foreach (Collider2D col in cols)
         {
-            if(col.tag!="Enemy")continue;
             nearRange=Vector3.Distance(playerPos.position , col.transform.position);
             if(nearRange2>nearRange){
                 nearRange2 = nearRange; 
@@ -41,7 +48,8 @@ public class PoTapBase : MonoBehaviour
             }
         }
         if(near==null)return;
-        targetTransform = near;
+        
+        _targetTransform = near;
     }
     
     protected void TimeGo(){
