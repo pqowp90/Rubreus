@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PoTapBase : MonoBehaviour
 {
+    [SerializeField]
+    protected float bulletDamage, bulletSpeed;
+    private Animator animator;
     public LayerMask whatLayerMask;
     [SerializeField]
     protected float myGunDeley,range;
@@ -15,18 +18,21 @@ public class PoTapBase : MonoBehaviour
     protected Transform targetTransform,playerPos;
     protected virtual void Start()
     {
-        
+        animator = GetComponent<Animator>();
         playerPos = FindObjectOfType<Player>().transform;
         StartCoroutine(RepeatingFind());
     }
+    protected void BangAniTrigger(){
+        animator.SetTrigger("bang");
+    }
     private IEnumerator RepeatingFind(){
-        yield return new WaitForSeconds(Random.Range(0f,1f));
+        yield return new WaitForSeconds(Random.Range(0f,2f));
         while(true){
             FindTarger(transform.position, ref targetTransform);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
         }
     }
-    protected private void LookAtTarget(){
+    protected virtual private void LookAtTarget(){
         if(targetTransform==null)return;
         Vector3 targetPos = targetTransform.position;
         targetPos-=transform.position;

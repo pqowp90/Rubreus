@@ -5,6 +5,8 @@ using Cinemachine;
 public class Player : MonoBehaviour
 {
     [SerializeField]
+    private float bulletDamage, bulletSpeed;
+    [SerializeField]
     private float speed=0f,lookAngle=0f,angle=0f,joomSpeed
         ,walkSpeed,runSpeed,cameraJoomIn,cameraJoomOut,joomInSpeed,myGunDeley;
     private float inputX,inputY,realInputX,realInputY,cameraJoom,gunDeley,beforeAngle,LerpAngle,turnSpeed;
@@ -36,7 +38,10 @@ public class Player : MonoBehaviour
         if(Input.GetMouseButton(0)&&gunDeley>=myGunDeley&&!myAnimator.GetBool("Run")){
             gunDeley=0f;
             AllPoolManager.Instance.GetObjPos(0,casingOutlet).gameObject.SetActive(true);
-            AllPoolManager.Instance.GetObjPos(1,shootingPos).gameObject.SetActive(true);
+            Bullet bullet = AllPoolManager.Instance.GetObjPos(1,shootingPos).GetComponent<Bullet>();
+            bullet.damage = bulletDamage;
+            bullet.speed = bulletSpeed;
+            bullet.gameObject.SetActive(true);
             myParticleSystem.Play();
         }
         gunDeley+=Time.deltaTime;

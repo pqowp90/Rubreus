@@ -5,6 +5,7 @@ public class BasicParticle : MonoBehaviour
 {
     [SerializeField]
     private float lifeTime;
+    private float timeTime;
     [SerializeField]
     private int index;
     void Start()
@@ -12,9 +13,13 @@ public class BasicParticle : MonoBehaviour
         //Invoke("Pool",lifeTime);
     }
     void OnEnable(){
-        Invoke("Pool",lifeTime);
+        timeTime=lifeTime;
     }
-    private void Pool(){
-        AllPoolManager.Instance.PoolObj(transform,index);
+    private void Update(){
+        timeTime-=Time.deltaTime;
+        if(timeTime<=0){
+            timeTime=10f;
+            AllPoolManager.Instance.PoolObj(transform,index);
+        }
     }
 }

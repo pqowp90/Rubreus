@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class LightningPoTap : PoTapBase
 {
@@ -13,10 +14,16 @@ public class LightningPoTap : PoTapBase
     //Transform[] poss = new Transform[10];
     [SerializeField]
     List<Transform> poss=new List<Transform>();
+    private AudioSource audioSource;
+    private bool barssajoung=false;
+    private float deley=0f;
+    private Animator animator;
     protected Transform newTarget;
     protected override void Start()
     {
         base.Start();
+        audioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
     }
     private void FireLightning(){
         if(targetTransform!=null&&gunDeley>=myGunDeley){
@@ -27,71 +34,88 @@ public class LightningPoTap : PoTapBase
             poss.RemoveRange(0,poss.Count);
             poss.Add(shootingPos);
             poss.Add(targetTransform);
-            NextTarget();
-
-            // for(int i=0;i<poss.Count;i++)
-            //     Debug.Log(poss[i]);
-            AllPoolManager.Instance.GetObjPos(3,shootingPos).gameObject.SetActive(true);
-            myParticleSystem.Play();
+            boundCount=0;
+            FindLightningTarger(poss[1].position,range);
+            audioSource.Play();
+            StartCoroutine(Zizizizi());
+            animator.SetTrigger("zizi");
+            LookAtTarget();
         }
     }
-    private void FindLightningTarger(Vector2 pos){
+    protected override private void LookAtTarget(){
+        if(targetTransform==null)return;
+        Vector3 targetPos = targetTransform.position;
+        targetPos-=transform.position;
+        float lookAngle = Mathf.Atan2(targetPos.y,targetPos.x)* Mathf.Rad2Deg;
+        chukTransform.DOLocalRotate(new Vector3(0f,0f,lookAngle), 0.4f);
+        
+    }
+    private void  FindLightningTarger(Vector2 pos, float _range){
+        
         if(boundCount>bound)return;
-        float nearRange, nearRange2=range;
+        float nearRange, nearRange2=_range;
         Transform near=null;
         bool hi=false;
-        Collider2D[] cols = Physics2D.OverlapCircleAll(pos, range, whatLayerMask);
+        Collider2D[] cols = Physics2D.OverlapCircleAll(pos, _range, whatLayerMask);
         if(cols.Length==0)return;
-        foreach (Collider2D col in cols)
-        {
+        foreach (Collider2D col in cols){
             hi=false;
-            Debug.Log("심판시작 "+col);
-            foreach (Transform tran in poss)
-            {
+            foreach (Transform tran in poss){
                 if(tran == col.transform){
-                    Debug.Log("넌 겹친다 "+col);
                     hi=true;
                     break;
                 }
             }
             if(hi)continue;
-            nearRange=Vector2.Distance(pos , col.transform.position);                     
+            nearRange=Vector2.Distance(pos , col.transform.position);             
             if(nearRange2>=nearRange){
-                nearRange2 = nearRange; 
+                nearRange2 = nearRange;
                 near = col.transform;
-                Debug.Log("통과"+nearRange);
-            }else{
-                Debug.Log("탈락"+nearRange);
-            }
-            
+            }    
         }
         if(near == null){
-            Debug.Log("대상을 찾을수 없음.");
             return;
         }
         poss.Add(near);
-        Debug.Log(boundCount);
         boundCount++;
-        FindLightningTarger(near.position);
+        FindLightningTarger(near.position,range/3*1);
     }
-    private void NextTarget(){
-        boundCount=0;
-        FindLightningTarger(poss[1].position);
-    }
+    
     private void SetLinePos(){
+        
+        lineRenderer.positionCount = poss.Count;
         for(int i=0;i<poss.Count;i++){
-            if(poss[i]==null)return;
-            lineRenderer.positionCount = i+1;
+            if(poss[i]==null){
+                lineRenderer.positionCount = i;
+                return;
+            }
+            
             Vector2 pos = poss[i].position;
             lineRenderer.SetPosition(i,pos);
+
+            //poss[i].GetComponent<Enemy1>().Damaged(damage);
         }
         
     }
+    
+    private IEnumerator Zizizizi(){
+        for(int i=0;i<poss.Count;i++){
+            Enemy1 ene = poss[i].GetComponent<Enemy1>();
+            if(ene==null)continue;
+            ene.Damaged(bulletDamage/i+1);
+        }
+        SetLinePos();
+        for(int i=0;i<10;i++){
+            lineRenderer.SetPosition(0,poss[0].position);
+            yield return new WaitForFixedUpdate();
+        }
+        yield return new WaitForSeconds(0.2f);
+        lineRenderer.positionCount = 0;
+    }
+
     void Update()
     {
-        LookAtTarget();
         FireLightning();
         TimeGo();
-        SetLinePos();
     }
 }
