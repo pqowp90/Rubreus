@@ -5614,11 +5614,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\uD130\uB7AB (6)"
       objectReference: {fileID: 0}
-    - target: {fileID: 2041513705122812321, guid: a8038f06d967e62438e894699699d682,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3076262892904536882, guid: a8038f06d967e62438e894699699d682,
         type: 3}
       propertyPath: m_RootOrder
