@@ -102,7 +102,7 @@ public class LightningPoTap : PoTapBase
         for(int i=0;i<poss.Count;i++){
             Enemy1 ene = poss[i].GetComponent<Enemy1>();
             if(ene==null)continue;
-            ene.Damaged(bulletDamage/i+1);
+            ene.Damaged(bulletDamage/i+1,stunTime);
         }
         SetLinePos();
         for(int i=0;i<10;i++){

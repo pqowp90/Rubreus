@@ -5,7 +5,7 @@ using UnityEngine;
 public class PoTapBase : MonoBehaviour
 {
     [SerializeField]
-    protected float bulletDamage, bulletSpeed;
+    protected float bulletDamage, bulletSpeed,stunTime;
     private Animator animator;
     public LayerMask whatLayerMask;
     [SerializeField]

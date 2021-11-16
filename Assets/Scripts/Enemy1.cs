@@ -11,6 +11,9 @@ public class Enemy1 : MonoBehaviour
     [SerializeField]
     private float maxHp,hp;
     private HpBar hpBar;
+    private bool stun;
+    [SerializeField]
+    private float stunDeley;
     void Awake()	{
         hpBar = GetComponent<HpBar>();
 		agent = GetComponent<NavMeshAgent>();
@@ -23,14 +26,18 @@ public class Enemy1 : MonoBehaviour
     }
     void Update()
     {
-        if(agent.destination!=target.transform.position){
+        if(stunDeley>0)
+            stunDeley-=Time.deltaTime;
+        if(stunDeley>3)stunDeley=3;
+        if(agent.destination!=target.transform.position&&stunDeley<=0){
             agent.SetDestination(target.position);
         }
         else{
             agent.SetDestination(transform.position);
         }
     }
-    public void Damaged(float damage){
+    public void Damaged(float damage, float stunTime){
+        stunDeley += stunTime;
         hp -= damage;
         hpBar.SetHp(hp, maxHp);
         if(hp<=0){

@@ -124,6 +124,7 @@ MonoBehaviour:
   target: {fileID: 0}
   maxHp: 50
   hp: 0
+  stunDeley: 0
 --- !u!50 &3954799188029930448
 Rigidbody2D:
   serializedVersion: 4

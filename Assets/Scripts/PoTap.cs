@@ -17,6 +17,7 @@ public class PoTap : PoTapBase
             Bullet bullet = AllPoolManager.Instance.GetObjPos(1,shootingPos).GetComponent<Bullet>();
             bullet.damage = bulletDamage;
             bullet.speed = bulletSpeed;
+            bullet.stunTime = stunTime;
             bullet.gameObject.SetActive(true);
             myParticleSystem.Play();
         }

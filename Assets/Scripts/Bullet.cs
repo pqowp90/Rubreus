@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField]
     public float speed,damage;
+    public float stunTime;
     void Start()
     {
         
@@ -18,7 +19,7 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider2D){
         if(collider2D.gameObject.tag == "Enemy"){
             AllPoolManager.Instance.PoolObj(transform,1);
-            collider2D.GetComponent<Enemy1>().Damaged(damage);
+            collider2D.GetComponent<Enemy1>().Damaged(damage,stunTime);
         }
     }
 }
