@@ -5112,7 +5112,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   myGunDeley: 0.1
-  range: 10
+  range: 7
   casingOutlet: {fileID: 8438663439148991238}
   shootingPos: {fileID: 3874993081505121511}
   chukTransform: {fileID: 2084318740544327935}

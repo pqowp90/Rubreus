@@ -26,6 +26,8 @@ public class Enemy1 : MonoBehaviour
     }
     void Update()
     {
+        if(target == null)
+            FindObjectOfType<Player>();
         if(stunDeley>0)
             stunDeley-=Time.deltaTime;
         if(stunDeley>3)stunDeley=3;

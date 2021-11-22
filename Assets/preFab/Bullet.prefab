@@ -19291,8 +19291,8 @@ GameObject:
   - component: {fileID: 1771939194455181194}
   - component: {fileID: 2525166665513427825}
   - component: {fileID: 1237019451694423573}
-  m_Layer: 0
-  m_Name: col
+  m_Layer: 6
+  m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19353,6 +19353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 50
   damage: 10
+  stunTime: 0
 --- !u!114 &1237019451694423573
 MonoBehaviour:
   m_ObjectHideFlags: 0

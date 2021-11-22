@@ -15,15 +15,11 @@ public class LightningPoTap : PoTapBase
     [SerializeField]
     List<Transform> poss=new List<Transform>();
     private AudioSource audioSource;
-    private bool barssajoung=false;
-    private float deley=0f;
-    private Animator animator;
     protected Transform newTarget;
     protected override void Start()
     {
         base.Start();
         audioSource = GetComponent<AudioSource>();
-        animator = GetComponent<Animator>();
     }
     private void FireLightning(){
         if(targetTransform!=null&&gunDeley>=myGunDeley){

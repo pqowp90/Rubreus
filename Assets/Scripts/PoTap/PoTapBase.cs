@@ -6,7 +6,7 @@ public class PoTapBase : MonoBehaviour
 {
     [SerializeField]
     protected float bulletDamage, bulletSpeed,stunTime;
-    private Animator animator;
+    protected Animator animator;
     public LayerMask whatLayerMask;
     [SerializeField]
     protected float myGunDeley,range;

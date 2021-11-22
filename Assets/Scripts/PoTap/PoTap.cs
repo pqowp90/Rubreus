@@ -14,7 +14,7 @@ public class PoTap : PoTapBase
             BangAniTrigger();
             gunDeley=0f;
             AllPoolManager.Instance.GetObjPos(3,casingOutlet).gameObject.SetActive(true);
-            Bullet bullet = AllPoolManager.Instance.GetObjPos(1,shootingPos).GetComponent<Bullet>();
+            BulletBase bullet = AllPoolManager.Instance.GetObjPos(1,shootingPos).GetComponent<BulletBase>();
             bullet.damage = bulletDamage;
             bullet.speed = bulletSpeed;
             bullet.stunTime = stunTime;
