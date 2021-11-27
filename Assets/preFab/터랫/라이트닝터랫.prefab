@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6224607242479197230}
   - component: {fileID: 36783516366765461}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7594521336380575396}
   - component: {fileID: 1757243180430333420}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6771374464271012384}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: chuk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8417931693035767352}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: ShootingPos
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -230,7 +230,8 @@ GameObject:
   - component: {fileID: 6719603804879983485}
   - component: {fileID: 7272625194716941451}
   - component: {fileID: 219374892}
-  m_Layer: 6
+  - component: {fileID: 5020522437364126690}
+  m_Layer: 12
   m_Name: "\uB77C\uC774\uD2B8\uB2DD\uD130\uB7AB"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +346,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: c2372cf04da97e8498ca5c521d14d522, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.354
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -448,6 +449,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5020522437364126690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6719603804879983486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7522466ada51de4b93472f1e81a569b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6942026437868715782
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,7 +472,7 @@ GameObject:
   - component: {fileID: 6942026437868715787}
   - component: {fileID: 6942026437868715780}
   - component: {fileID: 6942026437868715781}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}

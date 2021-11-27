@@ -62,7 +62,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &11439282
 MonoBehaviour:
@@ -257,7 +257,7 @@ PrefabInstance:
     - target: {fileID: 824167088385395553, guid: 6387d68cbe02d2d4fb8912f794606585,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -173.41986
+      value: -173.41992
       objectReference: {fileID: 0}
     - target: {fileID: 824167088385395553, guid: 6387d68cbe02d2d4fb8912f794606585,
         type: 3}
@@ -642,7 +642,7 @@ PrefabInstance:
     - target: {fileID: 8023949359419186811, guid: 78081648e28527242bb334a6bdf7bfce,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -173.41998
+      value: -173.41992
       objectReference: {fileID: 0}
     - target: {fileID: 8023949359419186811, guid: 78081648e28527242bb334a6bdf7bfce,
         type: 3}

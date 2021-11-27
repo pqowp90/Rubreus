@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class PoTapBase : MonoBehaviour
 {
     [SerializeField]
@@ -20,12 +20,14 @@ public class PoTapBase : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         playerPos = FindObjectOfType<Player>().transform;
-        StartCoroutine(RepeatingFind());
+        
+        
     }
+    
     protected void BangAniTrigger(){
         animator.SetTrigger("bang");
     }
-    private IEnumerator RepeatingFind(){
+    public IEnumerator RepeatingFind(){
         yield return new WaitForSeconds(Random.Range(0f,2f));
         while(true){
             FindTarger(transform.position, ref targetTransform);

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoSingleton<GameManager>
 {
-    private Transform player;
+    [SerializeField]
+    private Transform[] randomPos;
+    public Transform player;
     [SerializeField]
     private GameObject potapPenal;
     [SerializeField]
@@ -22,12 +24,26 @@ public class GameManager : MonoSingleton<GameManager>
             penal.num = j;
         }
     }
-    public void MakePoTapTap(int num){
-        Transform poTap = AllPoolManager.Instance.GetObjPos(user.potapList[num].indexNum, player);
+    public Transform MakePoTapTap(int num, Transform pos){
+        Transform poTap = AllPoolManager.Instance.GetObjPos(user.potapList[num].indexNum, pos);
         poTap.gameObject.SetActive(true);
+        return poTap;
     }
-    private void Start(){
+    private void Awake(){
         player = FindObjectOfType<Player>().transform;
         CreatePenal();
+    }
+    public Vector3 GetrandomPos(){
+        //Debug.Log(randomPos.Length);
+        if(randomPos.Length==0)
+            return Vector3.zero;
+        return randomPos[Random.Range(0,randomPos.Length)].position;
+    }
+    public static float GetAngle (Vector3 vStart, Vector3 vEnd)
+    {
+        Vector3 v = vEnd - vStart;
+        v.Normalize();
+ 
+        return Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
     }
 }

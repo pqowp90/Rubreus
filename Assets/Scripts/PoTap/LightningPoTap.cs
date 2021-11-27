@@ -43,7 +43,7 @@ public class LightningPoTap : PoTapBase
         Vector3 targetPos = targetTransform.position;
         targetPos-=transform.position;
         float lookAngle = Mathf.Atan2(targetPos.y,targetPos.x)* Mathf.Rad2Deg;
-        chukTransform.DOLocalRotate(new Vector3(0f,0f,lookAngle), 0.4f);
+        chukTransform.DORotate(new Vector3(0f,0f,lookAngle), 0.4f);
         
     }
     private void  FindLightningTarger(Vector2 pos, float _range){
