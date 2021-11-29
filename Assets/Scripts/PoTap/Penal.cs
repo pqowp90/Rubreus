@@ -8,10 +8,10 @@ public class Penal : MonoBehaviour
     public int num;
     public Image potapImage;
     public void MakePoTap(){
-
-        Transform drone = AllPoolManager.Instance.GetObj(8);
-        drone.position = new Vector3(500f,500f,0f);
-        drone.GetComponent<Drone>().droneMove(num, GameManager.Instance.player.position);
+        if(GameManager.Instance.isMakeingPotap==true)return;
+        GameManager.Instance.isMakeingPotap = true;
+        RangePotap drone = AllPoolManager.Instance.GetObj(9).GetComponent<RangePotap>();
+        drone.num = num;
         drone.gameObject.SetActive(true);
     }
 }

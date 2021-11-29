@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1702344163878192505}
   - component: {fileID: 1534195219309230521}
   - component: {fileID: 1535207245426505113}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bullet_BlazingRed_Big_Projectile
   m_TagString: FX
   m_Icon: {fileID: 0}
@@ -4830,7 +4830,7 @@ GameObject:
   - component: {fileID: 1693627149020039031}
   - component: {fileID: 1535571861293265987}
   - component: {fileID: 1534557823442408345}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9632,7 +9632,7 @@ GameObject:
   - component: {fileID: 1693401577084668925}
   - component: {fileID: 1535230748697780737}
   - component: {fileID: 1534523976774766733}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14488,7 +14488,7 @@ GameObject:
   - component: {fileID: 1693839717720732141}
   - component: {fileID: 1534906057669856533}
   - component: {fileID: 1534464204494849805}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: flarespikes_thin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19291,7 +19291,7 @@ GameObject:
   - component: {fileID: 1771939194455181194}
   - component: {fileID: 2525166665513427825}
   - component: {fileID: 1237019451694423573}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

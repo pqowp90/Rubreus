@@ -26,7 +26,7 @@ public class AllPoolManager : MonoSingleton<AllPoolManager>
             obj.SetParent(null);
             
         }else {
-            obj = Instantiate(objects[index]).transform;
+            obj = Instantiate(objects[index],new Vector3(100f,100f,100f),Quaternion.identity).transform;
         }
         obj.gameObject.SetActive(false);
         return obj;

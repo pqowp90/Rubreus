@@ -8,8 +8,9 @@ public class Falldown : MonoBehaviour
     private void Start()
     {
         
+    }
+    public void EndPosingPotap(){
         transform.localScale = new Vector3(1.5f,1.5f,1.5f);
-        
     }
     public void installationPotap(){
         PoTapBase poTapBase = GetComponent<PoTapBase>();

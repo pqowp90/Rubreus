@@ -7,4 +7,5 @@ public class PotapList
     public string name;
     public int num;
     public int indexNum;
+    public float range;
 }

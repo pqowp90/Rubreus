@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoSingleton<GameManager>
 {
+    
     [SerializeField]
     private Transform[] randomPos;
     public Transform player;
@@ -14,6 +15,7 @@ public class GameManager : MonoSingleton<GameManager>
     public User CurrentUser {get{return user;}}
     [SerializeField]
     private Sprite[] turrets;
+    public bool isMakeingPotap=false;
     public void CreatePenal(){        
         for(int j=0;j<user.potapList.Count;j++){
             GameObject newPanel = null;
