@@ -1591,7 +1591,9 @@ MonoBehaviour:
   - {fileID: 3520271899488613546, guid: 6731617ce9a38bf42995ae004df90592, type: 3}
   - {fileID: 6846597692136657304, guid: d967454c584a77746bc42e0f0a8713b5, type: 3}
   - {fileID: 8829549960969111804, guid: b611fd6a84dcbe0448a1c9f77a3b37cd, type: 3}
+  - {fileID: 3954799188029930461, guid: bfae9d5006c3ca2418492a38ae8c6abd, type: 3}
   mothersOfObjects:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -1694,6 +1696,8 @@ MonoBehaviour:
   cameraJoomOut: 3.5
   joomInSpeed: 13
   myGunDeley: 0.1
+  maxHp: 100
+  hp: 0
   myCamera: {fileID: 519420031}
   playerTransform: {fileID: 21967089225143053}
   angleTransform: {fileID: 816033751}
@@ -1844,7 +1848,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 30
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -6086,7 +6090,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &431791892
 Transform:
   m_ObjectHideFlags: 0
@@ -82095,11 +82099,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\uBC94\uC704"
-      objectReference: {fileID: 0}
-    - target: {fileID: 8829549960969111804, guid: b611fd6a84dcbe0448a1c9f77a3b37cd,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b611fd6a84dcbe0448a1c9f77a3b37cd, type: 3}

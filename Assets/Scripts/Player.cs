@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     private int anglePlayer,anglePlayer2;
     private Animator myAnimator;
     [SerializeField]
+    private float maxHp,hp;
+    [SerializeField]
     private Camera myCamera;
     [SerializeField]
     private Transform playerTransform,angleTransform,playerCenter,casingOutlet,shootingPos;

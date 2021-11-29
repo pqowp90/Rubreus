@@ -44,7 +44,7 @@ public class Enemy1 : MonoBehaviour
         hpBar.SetHp(hp, maxHp);
         if(hp<=0){
             hpBar.DestroyHpbar();
-            Destroy(gameObject);
+            AllPoolManager.Instance.PoolObj(transform,10);
         }
     }
 }

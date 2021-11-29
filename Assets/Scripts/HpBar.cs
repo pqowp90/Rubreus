@@ -29,7 +29,7 @@ public class HpBar : MonoBehaviour
         hpbar[1].enabled=!(showTime<0f);
         
         Vector3 _hpBarPos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x,transform.position.y+0.5f,0f));
-        hpBarT.position  = new Vector3(transform.position.x,transform.position.y+0.5f,0f);
+        hpBarT.position  = new Vector3(transform.position.x,transform.position.y+0.4f,0f);
     }
     public void SetHp(float hp, float maxHp){
         hpbar[0].fillAmount = hp/maxHp;

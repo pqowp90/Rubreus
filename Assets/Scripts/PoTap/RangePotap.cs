@@ -31,17 +31,17 @@ public class RangePotap : MonoBehaviour
                 mySpriteRenderer.enabled = false;
                 myLight2D.enabled = false;
             }else{
-                mySpriteRenderer.color=new Color(0f,0.490f,0.0459f,0.403f);
+                mySpriteRenderer.color=new Color(0f,0.490f,0.0459f,0.227451f);
                 myLight2D.color=new Color(0f,0.490f,0.0459f,0);
             }
         }else{
             if(hihi){
-                mySpriteRenderer.color=new Color(0.489f,0f,0f,0.403f);
+                mySpriteRenderer.color=new Color(0.489f,0f,0f,0.227451f);
                 myLight2D.color=new Color(0.489f,0f,0f,0f);
                 mySpriteRenderer.enabled = true;
                 myLight2D.enabled = true;
             }else{
-                mySpriteRenderer.color=new Color(0.489f,0f,0f,0.403f);
+                mySpriteRenderer.color=new Color(0.489f,0f,0f,0.227451f);
                 myLight2D.color=new Color(0.489f,0f,0f,0f);
             }
         }
