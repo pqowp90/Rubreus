@@ -14,19 +14,21 @@ public class HpBar : MonoBehaviour
     
     void Start()
     {
-        hpBarT = Instantiate(hpBarPrefab , canvas).GetComponent<RectTransform>();
+        canvas = GameManager.Instance.hpBarCanvas.transform;
+        hpBarT = AllPoolManager.Instance.GetObjTransform(2 , GameManager.Instance.hpBarCanvas.transform).GetComponent<RectTransform>();
         hpbar[0] = hpBarT.GetChild(0).GetComponentInChildren<Image>();
         hpbar[1] = hpBarT.GetComponent<Image>();
+        hpBarT.gameObject.SetActive(true);
     }
 
     void Update()
     {
         if(showTime>=0f){
-            showTime-=Time.deltaTime;
+            showTime-=Time.deltaTime;   
         }
 
-        hpbar[0].enabled=!(showTime<0f);
-        hpbar[1].enabled=!(showTime<0f);
+        hpbar[0].enabled = !(showTime<0f);
+        hpbar[1].enabled = !(showTime<0f);
         
         Vector3 _hpBarPos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x,transform.position.y+0.5f,0f));
         hpBarT.position  = new Vector3(transform.position.x,transform.position.y+0.4f,0f);
@@ -36,6 +38,6 @@ public class HpBar : MonoBehaviour
         showTime = 2f;
     }
     public void DestroyHpbar(){
-        Destroy(hpBarT.gameObject);
+        AllPoolManager.Instance.PoolObj(hpBarT, 2);
     }
 }

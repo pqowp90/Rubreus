@@ -38,6 +38,14 @@ public class AllPoolManager : MonoSingleton<AllPoolManager>
         obj.rotation = Pos.rotation;
         return obj;
     }
+    public Transform GetObjTransform(int index, Transform Trans){
+        Transform obj;
+        obj = GetObj(index);
+        obj.SetParent(Trans);
+        obj.localPosition = Vector3.zero;
+        obj.localRotation = Quaternion.identity;
+        return obj;
+    }
     public void PoolObj(Transform obj,int index){
         obj.gameObject.SetActive(false);
         obj.SetParent(mothersOfObjects[index]);

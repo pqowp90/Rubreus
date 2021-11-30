@@ -17,15 +17,22 @@ public class Enemy1 : MonoBehaviour
     void Awake()	{
         hpBar = GetComponent<HpBar>();
 		agent = GetComponent<NavMeshAgent>();
+        
+        //agent.SetDestination(target.position);
+	}
+    private IEnumerator StartNav(){
+        yield return new WaitForSeconds(0.1f);
+        agent.enabled = true;
 		agent.updateRotation = false;
 		agent.updateUpAxis = false;
-        agent.SetDestination(target.position);
-	}
+    }
     private void OnEnable(){
+        StartCoroutine(StartNav());
         hp=maxHp;
     }
     void Update()
     {
+        if(agent.enabled==false)return;
         if(target == null)
             target=GameManager.Instance.player;
         if(stunDeley>0)

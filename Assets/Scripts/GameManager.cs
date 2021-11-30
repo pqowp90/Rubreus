@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoSingleton<GameManager>
 {
-    
+    public Canvas hpBarCanvas;
     [SerializeField]
     private Transform[] randomPos;
     public Transform player;
