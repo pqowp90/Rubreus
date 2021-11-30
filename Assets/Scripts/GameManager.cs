@@ -48,4 +48,7 @@ public class GameManager : MonoSingleton<GameManager>
  
         return Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
     }
+    public IEnumerator DestroyEnemy(){
+        yield return new WaitForSeconds(1f);
+    }
 }

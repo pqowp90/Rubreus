@@ -11,6 +11,7 @@ public class PoTap : PoTapBase
     }
     private void FireGun(){
         if(targetTransform!=null&&gunDeley>=myGunDeley){
+            if(targetTransform.GetComponent<Enemy1>().reincarnationsNum!=targetReincarnations)return;
             BangAniTrigger();
             gunDeley=0f;
             AllPoolManager.Instance.GetObjPos(3,casingOutlet).gameObject.SetActive(true);

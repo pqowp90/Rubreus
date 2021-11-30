@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Enemy1 : MonoBehaviour
 {
+    public int reincarnationsNum=0;
     private NavMeshAgent agent;
     [SerializeField]
     Transform target;
@@ -50,6 +51,7 @@ public class Enemy1 : MonoBehaviour
         hp -= damage;
         hpBar.SetHp(hp, maxHp);
         if(hp<=0){
+            reincarnationsNum++;
             hpBar.DestroyHpbar();
             AllPoolManager.Instance.PoolObj(transform,10);
         }

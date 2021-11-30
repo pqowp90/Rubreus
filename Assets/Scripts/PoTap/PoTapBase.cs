@@ -16,6 +16,7 @@ public class PoTapBase : MonoBehaviour
     [SerializeField]
     protected ParticleSystem myParticleSystem;
     protected Transform targetTransform,playerPos;
+    protected int targetReincarnations;
     protected virtual void Start()
     {
         animator = GetComponent<Animator>();
@@ -56,7 +57,7 @@ public class PoTapBase : MonoBehaviour
             }
         }
         if(near==null)return null;
-        
+        targetReincarnations = near.GetComponent<Enemy1>().reincarnationsNum;
         _targetTransform = near;
         return near;
     }

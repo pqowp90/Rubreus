@@ -34,6 +34,7 @@ public class HpBar : MonoBehaviour
         hpBarT.position  = new Vector3(transform.position.x,transform.position.y+0.4f,0f);
     }
     public void SetHp(float hp, float maxHp){
+        if(hpbar==null)return;
         hpbar[0].fillAmount = hp/maxHp;
         showTime = 2f;
     }

@@ -23,6 +23,7 @@ public class LightningPoTap : PoTapBase
     }
     private void FireLightning(){
         if(targetTransform!=null&&gunDeley>=myGunDeley){
+            if(targetTransform.GetComponent<Enemy1>().reincarnationsNum!=targetReincarnations)return;
             FindTarger(transform.position, ref targetTransform);
             if(targetTransform == null)return;
             gunDeley=0f;
@@ -63,7 +64,7 @@ public class LightningPoTap : PoTapBase
                 }
             }
             if(hi)continue;
-            nearRange=Vector2.Distance(pos , col.transform.position);             
+            nearRange=Vector2.Distance(pos , col.transform.position);
             if(nearRange2>=nearRange){
                 nearRange2 = nearRange;
                 near = col.transform;
@@ -81,13 +82,14 @@ public class LightningPoTap : PoTapBase
         
         lineRenderer.positionCount = poss.Count;
         for(int i=0;i<poss.Count;i++){
-            if(poss[i]==null){
+            if(poss[i]==null&&poss[i].gameObject.activeSelf){
                 lineRenderer.positionCount = i;
                 return;
             }
             
             Vector2 pos = poss[i].position;
             lineRenderer.SetPosition(i,pos);
+
 
             //poss[i].GetComponent<Enemy1>().Damaged(damage);
         }
