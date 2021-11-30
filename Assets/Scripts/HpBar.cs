@@ -7,12 +7,12 @@ public class HpBar : MonoBehaviour
 {
     public GameObject hpBarPrefab;
     public Transform canvas;
-
+    [SerializeField]
     private RectTransform hpBarT;
     private Image[] hpbar = new Image[2];
     private float showTime=0f;
     
-    void Start()
+    void OnEnable()
     {
         canvas = GameManager.Instance.hpBarCanvas.transform;
         hpBarT = AllPoolManager.Instance.GetObjTransform(2 , GameManager.Instance.hpBarCanvas.transform).GetComponent<RectTransform>();

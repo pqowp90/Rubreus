@@ -14,7 +14,7 @@ public class EnemySpone : MonoBehaviour
 
     void Update(){
         time += Time.deltaTime;
-        if(time>0.5f){
+        if(time>1f){
             time = 0f;
             AllPoolManager.Instance.GetObjPos(10,SponePos).gameObject.SetActive(true);
         }

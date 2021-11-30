@@ -9,7 +9,7 @@ public class BulletBase : MonoBehaviour
     public float stunTime;
 
 
-    protected void Update()
+    protected virtual void Update()
     {
         transform.Translate(Vector3.right*Time.deltaTime*speed);
     }
