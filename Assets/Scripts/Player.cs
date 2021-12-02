@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private ParticleSystem myParticleSystem;
     private IEnumerator playingCrt;
-    private bool canShot=true;
+    private bool wallHi;
     void Start()
     {
         
@@ -48,6 +48,8 @@ public class Player : MonoBehaviour
         Player.bullet = realMaxBullet;
     }
     private IEnumerator Reloading(){
+        if(wallHi)yield return null;
+        GameManager.Instance.playerUi.OnUI(2.5f);
         playingCrt = Reloading();
         myAnimator.SetLayerWeight(myAnimator.GetLayerIndex("TopMove"), 1);
         myAnimator.Play("Rifle_Reload_2",-1,0f);
@@ -55,6 +57,12 @@ public class Player : MonoBehaviour
         Player.bullet = realMaxBullet;
         GameManager.Instance.playerUi.UpdateUi();
         yield return new WaitForSeconds(0.6f);
+        myAnimator.SetLayerWeight(myAnimator.GetLayerIndex("TopMove"), 0);
+    }
+    private IEnumerator LookUp(){
+        myAnimator.SetLayerWeight(myAnimator.GetLayerIndex("TopMove"), 1);
+        myAnimator.Play("Rifle_Look_45U_Additive",-1,0f);
+        yield return new WaitUntil(()=>!wallHi);
         myAnimator.SetLayerWeight(myAnimator.GetLayerIndex("TopMove"), 0);
     }
     private void StopAllCrt(){
@@ -74,6 +82,7 @@ public class Player : MonoBehaviour
             &&!EventSystem.current.IsPointerOverGameObject()&& myAnimator.GetLayerWeight(myAnimator.GetLayerIndex("TopMove"))==0){
             
             if(Player.bullet > 0){
+                GameManager.Instance.playerUi.OnUI(1.5f);
                 gunDeley=0f;
                 AllPoolManager.Instance.GetObjPos(0,casingOutlet).gameObject.SetActive(true);
                 BulletBase bullet = AllPoolManager.Instance.GetObjPos(1,shootingPos).GetComponent<BulletBase>();
@@ -153,6 +162,17 @@ public class Player : MonoBehaviour
         // if(Mathf.Abs((lookAngle-beforeAngle))/2f>45f)
         //     beforeAngle = lookAngle;
         
+    }
+    private void OnTriggerEnter2D(Collider2D collider2D){
+        if(collider2D.gameObject.layer != 6)return;
+        if(wallHi)return;
+        wallHi=true;
+        StopAllCrt();
+        StartCoroutine(LookUp());
+    }
+    private void OnTriggerExit2D(Collider2D collider2D){
+        if(collider2D.gameObject.layer != 6)return;
+        wallHi=false;
     }
     private void SmoothWalkLookMouse2(){
         Vector3 lookV;
