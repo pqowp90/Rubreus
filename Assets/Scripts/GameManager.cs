@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoSingleton<GameManager>
 {
+    public PlayerUi playerUi;
     public Canvas hpBarCanvas;
     [SerializeField]
     private Transform[] randomPos;
@@ -32,6 +33,7 @@ public class GameManager : MonoSingleton<GameManager>
         return poTap;
     }
     private void Awake(){
+        playerUi = FindObjectOfType<PlayerUi>();
         player = FindObjectOfType<Player>().transform;
         CreatePenal();
     }

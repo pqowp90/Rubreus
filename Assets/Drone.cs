@@ -13,7 +13,7 @@ public class Drone : MonoBehaviour
         Transform poTap=GameManager.Instance.MakePoTapTap(num, transform);
 
         poTap.SetParent(transform);
-        poTap.localPosition=Vector3.zero;
+        poTap.localScale = new Vector3(1.5f,1.5f,1.5f);
 
         Sequence mySequence = DOTween.Sequence();
         

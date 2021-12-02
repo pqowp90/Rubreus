@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletDamage: 5
   bulletSpeed: 1
-  stunTime: 0.3
+  stunTime: 0.2
   whatLayerMask:
     serializedVersion: 2
     m_Bits: 2048
