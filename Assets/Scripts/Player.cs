@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float bulletDamage, bulletSpeed;
     [SerializeField]
+    private float reloadTime;
+    [SerializeField]
     private float speed=0f,lookAngle=0f,angle=0f,joomSpeed
         ,walkSpeed,runSpeed,cameraJoomIn,cameraJoomOut,joomInSpeed,myGunDeley;
     private float inputX,inputY,realInputX,realInputY,cameraJoom,gunDeley,beforeAngle,LerpAngle,turnSpeed;
@@ -16,6 +18,8 @@ public class Player : MonoBehaviour
     private Animator myAnimator;
     [SerializeField]
     private float maxHp,hp;
+    public static int bullet,maxBullet;
+    public int realMaxBullet;
     [SerializeField]
     private Camera myCamera;
     [SerializeField]
@@ -28,24 +32,84 @@ public class Player : MonoBehaviour
     private Rigidbody2D myRigidbody2D;
     [SerializeField]
     private ParticleSystem myParticleSystem;
-
+    private IEnumerator playingCrt;
+    private bool wallHi,isReloading;
+    private int weightAni;
+    private float _weightAni;
+    [SerializeField]
+    private GameObject gunLight;
     void Start()
     {
+        
+        
         myRigidbody2D = GetComponent<Rigidbody2D>();
         myAnimator = GetComponentInChildren<Animator>();
+        SetMaxBullet(0);
+    }
+    public void SetMaxBullet(int a){
+        if(a!=0)realMaxBullet = a;
+        Player.maxBullet = realMaxBullet;
+        Player.bullet = realMaxBullet;
+    }
+    private IEnumerator Reloading(){
+        //if(wallHi)yield return null;
+        GameManager.Instance.playerUi.OnUI(0f);
+        playingCrt = Reloading();
+        isReloading = true;
+        weightAni=1;
+        myAnimator.Play("Rifle_Reload_2",-1,0f);
+        yield return new WaitForSeconds(1.4f);
+        Player.bullet = realMaxBullet;
+        GameManager.Instance.playerUi.UpdateUi();
+        GameManager.Instance.playerUi.OnUI(1.1f);
+        yield return new WaitForSeconds(0.6f);
+        isReloading = false;
+        weightAni=0;
+        // if(wallHi==false)
+        //     weightAni=0;
+        // else{
+        //     myAnimator.Play("Rifle_Look_45U_Additive",-1,0f);
+        // }
+    }
+    private IEnumerator LookUp(){//오류있어서 안씀
+        weightAni=1;
+        myAnimator.Play("Rifle_Look_45U_Additive",-1,0f);
+        yield return new WaitUntil(()=>!wallHi);
+        weightAni=0;
+    }
+    private void StopAllCrt(){
+        if(playingCrt!=null)
+            StopCoroutine(playingCrt);
+        weightAni=0;
+        
     }
 
     void Update()
     {
-        
-        if(Input.GetMouseButton(0)&&gunDeley>=myGunDeley&&!myAnimator.GetBool("Run")&&!EventSystem.current.IsPointerOverGameObject()){
-            gunDeley=0f;
-            AllPoolManager.Instance.GetObjPos(0,casingOutlet).gameObject.SetActive(true);
-            BulletBase bullet = AllPoolManager.Instance.GetObjPos(1,shootingPos).GetComponent<BulletBase>();
-            bullet.damage = bulletDamage;
-            bullet.speed = bulletSpeed;
-            bullet.gameObject.SetActive(true);
-            myParticleSystem.Play();
+        _weightAni = Mathf.Lerp(_weightAni,(float)weightAni,0.1f);
+        myAnimator.SetLayerWeight(myAnimator.GetLayerIndex("TopMove"), _weightAni);
+        if(Input.GetKeyDown(KeyCode.R)){
+            StopAllCrt();
+            StartCoroutine(Reloading());
+        }
+        if(Input.GetMouseButton(0)&&gunDeley>=myGunDeley&&!myAnimator.GetBool("Run")
+            &&!EventSystem.current.IsPointerOverGameObject()&& _weightAni<0.1f){
+            
+            if(Player.bullet > 0){
+                GameManager.Instance.playerUi.OnUI(1.5f);
+                gunDeley=0f;
+                AllPoolManager.Instance.GetObjPos(0,casingOutlet).gameObject.SetActive(true);
+                BulletBase bullet = AllPoolManager.Instance.GetObjPos(1,shootingPos).GetComponent<BulletBase>();
+                Player.bullet--;
+                bullet.damage = bulletDamage;
+                bullet.speed = bulletSpeed;
+                bullet.gameObject.SetActive(true);
+                myParticleSystem.Play();
+                GameManager.Instance.playerUi.UpdateUi();
+            }else{
+                StopAllCrt();
+                StartCoroutine(Reloading());
+            }
         }
         gunDeley+=Time.deltaTime;
 
@@ -112,6 +176,20 @@ public class Player : MonoBehaviour
         // if(Mathf.Abs((lookAngle-beforeAngle))/2f>45f)
         //     beforeAngle = lookAngle;
         
+    }
+    private void OnTriggerEnter2D(Collider2D collider2D){
+        if(collider2D.gameObject.layer != 6)return;
+        //if(wallHi||isReloading)return;
+        //wallHi=true;
+        gunLight.SetActive(false);
+        //GameManager.Instance.playerUi.OnUI(0f);
+        //StopAllCrt();
+        //StartCoroutine(LookUp());
+    }
+    private void OnTriggerExit2D(Collider2D collider2D){
+        if(collider2D.gameObject.layer != 6)return;
+        //wallHi=false;
+        gunLight.SetActive(true);
     }
     private void SmoothWalkLookMouse2(){
         Vector3 lookV;
