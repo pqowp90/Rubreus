@@ -18,9 +18,9 @@ public class Enemy1 : MonoBehaviour
     protected float stunDeley;
     protected Vector2 pastPos,nowPos;
     protected Vector3 nowAngle;
-    protected bool playerChase=false, isAttacking=false;
+    protected bool playerChase=false, isAttacking=false, hiTarger=false;
     [SerializeField]
-    protected float attackRange, attackDeley;
+    protected float attackRange, attackDeley, damage;
     [SerializeField]
     protected Transform pos;
     [SerializeField]
@@ -35,7 +35,7 @@ public class Enemy1 : MonoBehaviour
     protected void SetRotate(){
         if(target == null)return; 
         nowPos = transform.position;
-        nowAngle = new Vector3(0f,0f,GameManager.GetAngle(nowPos,pastPos)+90f);
+        nowAngle = new Vector3(0f,0f,GameManager.GetAngle(nowPos,(playerChase)?(Vector2)target.position:pastPos)+((playerChase)?-90f:90f));
         pastPos = transform.position;
     }
     protected IEnumerator StartNav(){
@@ -62,7 +62,7 @@ public class Enemy1 : MonoBehaviour
                 collider2D.GetComponent<RealBumb>();
             }
             if(collider2D.tag == "Player"){
-                collider2D.GetComponent<Player>();
+                collider2D.GetComponent<Player>().Damaged(damage);
             }
         }
     }
@@ -77,13 +77,15 @@ public class Enemy1 : MonoBehaviour
         if(agent.enabled==false)return;
 
 
-        if(playerChase){
-            if(Vector3.Distance(transform.position, target.position)<=attackRange){
+        if(target != null){
+            if(Vector2.Distance(transform.position, target.position)<=attackRange){
+                hiTarger = true;
                 if(!isAttacking)
-                    AttactAni();
+                    StartCoroutine(AttactAni());
                 else
                     return;
             }
+            else hiTarger = false;
         }
 
         transform.rotation = Quaternion.Lerp(Quaternion.Euler(transform.eulerAngles), Quaternion.Euler(nowAngle), 0.1f);
@@ -140,5 +142,10 @@ public class Enemy1 : MonoBehaviour
         if(collider2D.gameObject.layer != 8)return;
         target = null;
         playerChase = false;
+    }
+    protected void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube(pos.position, boxSize);
     }
 }
