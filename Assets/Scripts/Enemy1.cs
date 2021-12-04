@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Enemy1 : MonoBehaviour
 {
+    protected Animator animator;
     public int reincarnationsNum=0;
     protected NavMeshAgent agent;
     [SerializeField]
@@ -17,10 +18,15 @@ public class Enemy1 : MonoBehaviour
     protected float stunDeley;
     protected Vector2 pastPos,nowPos;
     protected Vector3 nowAngle;
-    protected bool playerChase=false;
+    protected bool playerChase=false, isAttacking=false;
     [SerializeField]
-    protected float attackRange;
+    protected float attackRange, attackDeley;
+    [SerializeField]
+    protected Transform pos;
+    [SerializeField]
+    protected Vector2 boxSize;
     protected virtual void Awake()	{
+        animator = GetComponent<Animator>();
         hpBar = GetComponent<HpBar>();
 		agent = GetComponent<NavMeshAgent>();
         InvokeRepeating("SetRotate", 0f, 0.1f);
@@ -39,12 +45,33 @@ public class Enemy1 : MonoBehaviour
 		agent.updateUpAxis = false;
     }
     protected void OnEnable(){
+        stunDeley = 0f;
+        playerChase=false;
+        isAttacking=false;
         agent.updateRotation = true;
         StartCoroutine(StartNav());
         hp=maxHp;
     }
     protected virtual void Attact(){
-        
+        int layerMask = (1 << LayerMask.NameToLayer("Player")) + (1 << LayerMask.NameToLayer("Bumb"));
+
+        Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0, layerMask);
+
+        foreach(Collider2D collider2D in collider2Ds){
+            if(collider2D.tag == "Bumb"){
+                collider2D.GetComponent<RealBumb>();
+            }
+            if(collider2D.tag == "Player"){
+                collider2D.GetComponent<Player>();
+            }
+        }
+    }
+    protected virtual IEnumerator AttactAni(){
+        isAttacking = true;
+        animator.SetTrigger("Attack");
+        stunDeley = attackDeley;
+        yield return new WaitForSeconds(attackDeley);
+        isAttacking = false;
     }
     protected void FixedUpdate(){
         if(agent.enabled==false)return;
@@ -52,16 +79,22 @@ public class Enemy1 : MonoBehaviour
 
         if(playerChase){
             if(Vector3.Distance(transform.position, target.position)<=attackRange){
-                Attact();
+                if(!isAttacking)
+                    AttactAni();
+                else
+                    return;
             }
         }
 
         transform.rotation = Quaternion.Lerp(Quaternion.Euler(transform.eulerAngles), Quaternion.Euler(nowAngle), 0.1f);
 
         if(target == null){
+            animator.SetFloat("Walk",0f);
             if(GameManager.Instance.isBumbCharging){
                 target=GameManager.Instance.bumbPos;
             }
+        }else{
+            animator.SetFloat("Walk",1f);
         }
         
         if(stunDeley>0)
