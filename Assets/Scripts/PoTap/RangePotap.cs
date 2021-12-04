@@ -11,6 +11,7 @@ public class RangePotap : MonoBehaviour
     public bool hihi=false;
     [SerializeField]
     public bool good = true;
+    private Vector2 myPos;
     void Start()
     {
         mySpriteRenderer = GetComponent<SpriteRenderer>();
@@ -22,6 +23,7 @@ public class RangePotap : MonoBehaviour
         myLight2D.pointLightOuterRadius = GameManager.Instance.CurrentUser.potapList[num].range;
     }
     private void Update(){
+        if(!hihi) transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition)+new Vector3(0f,0f,10f);
         int layerMask = (1 << LayerMask.NameToLayer("Wall")) + (1 << LayerMask.NameToLayer("Range"));
         Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, transform.localScale.x/2f,layerMask);
         good=(cols.Length==1);
@@ -47,12 +49,13 @@ public class RangePotap : MonoBehaviour
         }
         
         if(hihi)return;
-        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition)+new Vector3(0f,0f,10f);
+        
         if(Input.GetMouseButtonDown(1)){
             AllPoolManager.Instance.PoolObj(transform,9);
             GameManager.Instance.isMakeingPotap = false;
         }
         if(Input.GetMouseButtonDown(0)&&good&&!EventSystem.current.IsPointerOverGameObject()){
+            myPos = transform.position;
             GameManager.Instance.isMakeingPotap = false;
             hihi=true;
             mySpriteRenderer.enabled = false;
@@ -62,7 +65,7 @@ public class RangePotap : MonoBehaviour
         
     }
     public void MakePoTap(){
-
+        transform.position = myPos;
         Transform drone = AllPoolManager.Instance.GetObj(8);
         drone.position = new Vector3(500f,500f,0f);
         drone.GetComponent<Drone>().droneMove(num, transform.position);

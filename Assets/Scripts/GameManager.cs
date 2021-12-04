@@ -17,6 +17,8 @@ public class GameManager : MonoSingleton<GameManager>
     [SerializeField]
     private Sprite[] turrets;
     public bool isMakeingPotap=false;
+    public bool isBumbCharging;
+    public Transform bumbPos;
     public void CreatePenal(){        
         for(int j=0;j<user.potapList.Count;j++){
             GameObject newPanel = null;
@@ -26,6 +28,10 @@ public class GameManager : MonoSingleton<GameManager>
             penal.potapImage.sprite = turrets[j];
             penal.num = j;
         }
+    }
+    public void BumbHello(){
+        isBumbCharging = true;
+        bumbPos = FindObjectOfType<RealBumb>().transform;
     }
     public Transform MakePoTapTap(int num, Transform pos){
         Transform poTap = AllPoolManager.Instance.GetObjPos(user.potapList[num].indexNum, pos);

@@ -26,7 +26,6 @@ public class PlayerUi : MonoBehaviour
     {
         
         bulletNum.text = string.Format("{0}",Player.bullet);
-        Debug.Log(1f-Player.bullet/Player.maxBullet);
         bulletBar.fillAmount = (float)Player.bullet/(float)Player.maxBullet;
     }
     public void OnUI(float time){
