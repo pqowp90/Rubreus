@@ -55,7 +55,7 @@ public class Enemy1 : MonoBehaviour
     protected virtual void Attact(){
         int layerMask = (1 << LayerMask.NameToLayer("Player")) + (1 << LayerMask.NameToLayer("Bumb"));
 
-        Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0, layerMask);
+        Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, transform.rotation.z, layerMask);
 
         foreach(Collider2D collider2D in collider2Ds){
             if(collider2D.tag == "Bumb"){
@@ -147,5 +147,6 @@ public class Enemy1 : MonoBehaviour
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(pos.position, boxSize);
+        
     }
 }

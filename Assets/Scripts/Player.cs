@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
     {
         
         hp = maxHp;
+        GameManager.Instance.playerUi.SetHpUi(hp, maxHp);
         myRigidbody2D = GetComponent<Rigidbody2D>();
         myAnimator = GetComponentInChildren<Animator>();
         SetMaxBullet(0);
@@ -224,13 +225,14 @@ public class Player : MonoBehaviour
         
         effectTransform.localPosition = new Vector3(Random.Range(-0.3f,0.3f),1f,Random.Range(-0.1f,0.1f));
         AllPoolManager.Instance.GetObjPos(Random.Range(16,19), effectTransform).gameObject.SetActive(true);
+        CinemachineShake.Instance.ShakeCamera(3, 0.2f);
         if(hp-damage<=0){
+            hp = 0f;
             Die();
-            return;
-        }
-        hp -= damage;
+        }else
+            hp -= damage;
         GameManager.Instance.playerUi.SetHpUi(hp, maxHp);
-        vcam.transform.DOShakePosition(0.1f, 10, 90);
+        
     }
     private void Die(){
 

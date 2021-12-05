@@ -20,6 +20,7 @@ public class PlayerUi : MonoBehaviour
     private float alphaTime;
     [SerializeField]
     private Transform gunUi;
+    private float nowHp, hp;
     void Start()
     {
         canvasGroup = gunUi.GetComponent<CanvasGroup>();
@@ -29,6 +30,8 @@ public class PlayerUi : MonoBehaviour
     private void Update(){
         if(alphaTime>0f)alphaTime-=Time.deltaTime;
         canvasGroup.alpha = Mathf.Lerp(canvasGroup.alpha,(alphaTime>0f)?1f:0f,0.1f);
+        hp = Mathf.Lerp(hp, nowHp, 0.1f);
+        HpText.text = string.Format("{0}",(int)hp);
     }
     public void UpdateGunUi()
     {
@@ -39,7 +42,8 @@ public class PlayerUi : MonoBehaviour
     public void SetHpUi(float hp, float maxHp)
     {
         HpBar.fillAmount = hp/maxHp;
-        HpText.text = string.Format("{0}",hp);
+        nowHp = hp;
+        
     }
     public void OnUI(float time){
         alphaTime=time;
