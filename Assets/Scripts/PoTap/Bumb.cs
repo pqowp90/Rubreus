@@ -23,10 +23,11 @@ public class Bumb : BulletBase
     private void Booooom(){
         AllPoolManager.Instance.GetObjPos(13, transform).gameObject.SetActive(true);
         Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, range,whatLayerMask);
-        if(cols.Length==0)return;
+        if(cols.Length!=0){
         foreach (Collider2D col in cols)
-        {
-            col.GetComponent<Enemy1>().Damaged(damage,stunTime);
+            {
+                col.GetComponent<Enemy1>().Damaged(damage,stunTime);
+            }
         }
         AllPoolManager.Instance.PoolObj(transform,12);
     }

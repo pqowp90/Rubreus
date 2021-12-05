@@ -24,7 +24,7 @@ public class HpBar : MonoBehaviour
     void Update()
     {
         if(showTime>=0f){
-            showTime-=Time.deltaTime;   
+            showTime-=Time.deltaTime;
         }
 
         hpbar[0].enabled = !(showTime<0f);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.EventSystems;
+using DG.Tweening;
 public class Player : MonoBehaviour
 {
     [SerializeField]
@@ -38,13 +39,19 @@ public class Player : MonoBehaviour
     private float _weightAni;
     [SerializeField]
     private GameObject gunLight;
+    [SerializeField]
+    private Transform effectTransform;
     void Start()
     {
         
-        
+        hp = maxHp;
+        GameManager.Instance.playerUi.SetHpUi(hp, maxHp);
         myRigidbody2D = GetComponent<Rigidbody2D>();
         myAnimator = GetComponentInChildren<Animator>();
         SetMaxBullet(0);
+    }
+    public float GetMaxHp(){
+        return maxHp;
     }
     public void SetMaxBullet(int a){
         if(a!=0)realMaxBullet = a;
@@ -60,7 +67,7 @@ public class Player : MonoBehaviour
         myAnimator.Play("Rifle_Reload_2",-1,0f);
         yield return new WaitForSeconds(1.4f);
         Player.bullet = realMaxBullet;
-        GameManager.Instance.playerUi.UpdateUi();
+        GameManager.Instance.playerUi.UpdateGunUi();
         GameManager.Instance.playerUi.OnUI(1.1f);
         yield return new WaitForSeconds(0.6f);
         isReloading = false;
@@ -105,7 +112,7 @@ public class Player : MonoBehaviour
                 bullet.speed = bulletSpeed;
                 bullet.gameObject.SetActive(true);
                 myParticleSystem.Play();
-                GameManager.Instance.playerUi.UpdateUi();
+                GameManager.Instance.playerUi.UpdateGunUi();
             }else{
                 StopAllCrt();
                 StartCoroutine(Reloading());
@@ -217,4 +224,20 @@ public class Player : MonoBehaviour
         transform.Translate((new Vector2(inputX,inputY)).normalized*speed*0.02f);
         angle = Mathf.Atan2(realInputX,realInputY) * Mathf.Rad2Deg;
     }
+    public void Damaged(float damage){
+        
+        effectTransform.localPosition = new Vector3(Random.Range(-0.3f,0.3f),1f,Random.Range(-0.1f,0.1f));
+        AllPoolManager.Instance.GetObjPos(Random.Range(16,19), effectTransform).gameObject.SetActive(true);
+        CinemachineShake.Instance.ShakeCamera(3, 0.2f);
+        if(hp-damage<=0){
+            hp = 0f;
+            Die();
+        }else
+            hp -= damage;
+        GameManager.Instance.playerUi.SetHpUi(hp, maxHp);
+        
+    }
+    private void Die(){
+
+    } 
 }
