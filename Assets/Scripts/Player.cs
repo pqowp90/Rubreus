@@ -50,6 +50,9 @@ public class Player : MonoBehaviour
         myAnimator = GetComponentInChildren<Animator>();
         SetMaxBullet(0);
     }
+    public float GetMaxHp(){
+        return maxHp;
+    }
     public void SetMaxBullet(int a){
         if(a!=0)realMaxBullet = a;
         Player.maxBullet = realMaxBullet;

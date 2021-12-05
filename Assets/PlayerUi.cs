@@ -8,7 +8,7 @@ public class PlayerUi : MonoBehaviour
 {
     private CanvasGroup canvasGroup;
     [SerializeField]
-    private Text bulletNum;
+    private Text bulletNum,bulletNum2,bulletNum3;
     [SerializeField]
     private Image bulletBar;
     [SerializeField]
@@ -23,6 +23,7 @@ public class PlayerUi : MonoBehaviour
     private float nowHp, hp;
     void Start()
     {
+        hp = GameManager.Instance.player.GetComponent<Player>().GetMaxHp();
         canvasGroup = gunUi.GetComponent<CanvasGroup>();
         gunUi.eulerAngles = new Vector3(90f,gunUi.eulerAngles.y,gunUi.eulerAngles.z);
     }
@@ -38,6 +39,8 @@ public class PlayerUi : MonoBehaviour
         
         bulletNum.text = string.Format("{0}",Player.bullet);
         bulletBar.fillAmount = (float)Player.bullet/(float)Player.maxBullet;
+        bulletNum2.text = string.Format("{0}",Player.bullet);
+        bulletNum3.text = string.Format("{0}","∞");
     }
     public void SetHpUi(float hp, float maxHp)
     {

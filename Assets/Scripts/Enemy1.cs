@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class Enemy1 : MonoBehaviour
 {
+    [SerializeField]
+    private int Index;
     protected Animator animator;
     public int reincarnationsNum=0;
     protected NavMeshAgent agent;
@@ -35,7 +37,8 @@ public class Enemy1 : MonoBehaviour
     protected void SetRotate(){
         if(target == null)return; 
         nowPos = transform.position;
-        nowAngle = new Vector3(0f,0f,GameManager.GetAngle(nowPos,(playerChase)?(Vector2)target.position:pastPos)+((playerChase)?-90f:90f));
+        nowAngle = new Vector3(0f,0f,GameManager.GetAngle(nowPos,(playerChase||isAttacking)?
+            (Vector2)target.position:pastPos)+((playerChase||isAttacking)?-90f:90f));
         pastPos = transform.position;
     }
     protected IEnumerator StartNav(){
@@ -76,7 +79,8 @@ public class Enemy1 : MonoBehaviour
     protected void FixedUpdate(){
         if(agent.enabled==false)return;
 
-
+        transform.rotation = Quaternion.Lerp(Quaternion.Euler(transform.eulerAngles), Quaternion.Euler(nowAngle), 0.1f);
+        
         if(target != null){
             if(Vector2.Distance(transform.position, target.position)<=attackRange){
                 hiTarger = true;
@@ -88,7 +92,7 @@ public class Enemy1 : MonoBehaviour
             else hiTarger = false;
         }
 
-        transform.rotation = Quaternion.Lerp(Quaternion.Euler(transform.eulerAngles), Quaternion.Euler(nowAngle), 0.1f);
+        
 
         if(target == null){
             animator.SetFloat("Walk",0f);
@@ -119,7 +123,7 @@ public class Enemy1 : MonoBehaviour
         if(hp<=0){
             reincarnationsNum++;
             hpBar.DestroyHpbar();
-            AllPoolManager.Instance.PoolObj(transform,10);
+            AllPoolManager.Instance.PoolObj(transform,Index);
         }
     }
     protected void OnTriggerStay2D(Collider2D collider2D){
