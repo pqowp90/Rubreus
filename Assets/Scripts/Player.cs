@@ -104,7 +104,7 @@ public class Player : MonoBehaviour
         _weightAni = Mathf.Lerp(_weightAni,(float)weightAni,0.1f);
         myAnimator.SetLayerWeight(myAnimator.GetLayerIndex("TopMove"), _weightAni);
         if(Input.GetKeyDown(KeyCode.R)){
-            if(!isReloading){
+            if(!isReloading&&maxBullet != bullet){
                 StopAllCrt();
                 StartCoroutine(Reloading());
             }
