@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     private Animator myAnimator;
     [SerializeField]
     private float maxHp,hp;
+    [SerializeField]
+    private float maxSp,sp;
     public static int bullet,maxBullet;
     public int realMaxBullet;
     [SerializeField]
@@ -45,10 +47,16 @@ public class Player : MonoBehaviour
     {
         
         hp = maxHp;
+        sp = maxSp;
         GameManager.Instance.playerUi.SetHpUi(hp, maxHp);
+        GameManager.Instance.playerUi.SetSpUi(sp, maxSp);
         myRigidbody2D = GetComponent<Rigidbody2D>();
         myAnimator = GetComponentInChildren<Animator>();
         SetMaxBullet(0);
+        GameManager.Instance.playerUi.UpdateGunUi();
+    }
+    public float GetMaxSp(){
+        return maxSp;
     }
     public float GetMaxHp(){
         return maxHp;
@@ -96,8 +104,10 @@ public class Player : MonoBehaviour
         _weightAni = Mathf.Lerp(_weightAni,(float)weightAni,0.1f);
         myAnimator.SetLayerWeight(myAnimator.GetLayerIndex("TopMove"), _weightAni);
         if(Input.GetKeyDown(KeyCode.R)){
-            StopAllCrt();
-            StartCoroutine(Reloading());
+            if(!isReloading){
+                StopAllCrt();
+                StartCoroutine(Reloading());
+            }
         }
         if(Input.GetMouseButton(0)&&gunDeley>=myGunDeley&&!myAnimator.GetBool("Run")
             &&!EventSystem.current.IsPointerOverGameObject()&& _weightAni<0.1f){
@@ -238,6 +248,6 @@ public class Player : MonoBehaviour
         
     }
     private void Die(){
-
+        
     } 
 }

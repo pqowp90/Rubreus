@@ -20,12 +20,14 @@ public class PlayerUi : MonoBehaviour
     private float alphaTime;
     [SerializeField]
     private Transform gunUi;
+    private float nowSp, sp;
     private float nowHp, hp;
     void Start()
     {
         hp = GameManager.Instance.player.GetComponent<Player>().GetMaxHp();
         canvasGroup = gunUi.GetComponent<CanvasGroup>();
         gunUi.eulerAngles = new Vector3(90f,gunUi.eulerAngles.y,gunUi.eulerAngles.z);
+        
     }
 
     private void Update(){
@@ -40,14 +42,19 @@ public class PlayerUi : MonoBehaviour
         bulletNum.text = string.Format("{0}",Player.bullet);
         bulletBar.fillAmount = (float)Player.bullet/(float)Player.maxBullet;
         bulletNum2.text = string.Format("{0}",Player.bullet);
-        bulletNum3.text = string.Format("{0}","∞");
+        bulletNum3.text = string.Format("/{0}","∞");
     }
     public void SetHpUi(float hp, float maxHp)
     {
         HpBar.fillAmount = hp/maxHp;
         nowHp = hp;
-        
     }
+    public void SetSpUi(float sp, float maxSp)
+    {
+        StaminaBar.fillAmount = sp/maxSp;
+        nowSp = sp;
+    }
+    
     public void OnUI(float time){
         alphaTime=time;
     }
