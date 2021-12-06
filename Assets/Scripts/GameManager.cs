@@ -43,6 +43,12 @@ public class GameManager : MonoSingleton<GameManager>
         player = FindObjectOfType<Player>().transform;
         CreatePenal();
     }
+    private void Update(){
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            MenuUi.Instance.Option();
+            ClickSound.Instance.GoSound(0);
+        }
+    }
     public Vector3 GetrandomPos(){
         //Debug.Log(randomPos.Length);
         if(randomPos.Length==0)
