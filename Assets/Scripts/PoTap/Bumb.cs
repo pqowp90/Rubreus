@@ -34,7 +34,6 @@ public class Bumb : BulletBase
     protected override void Update(){
         if(time>0f)time -= Time.deltaTime;
         transform.localScale=new Vector3(1f,1f,1f)*curve.Evaluate(time/speed);
-        Debug.Log(time/speed);
         return;
     }
     protected override void OnTriggerEnter2D(Collider2D collider2D){
