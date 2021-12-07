@@ -12,9 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MainRobby.unity
     guid: b671d8acfb0da994e9943d8888cefd5f
   - enabled: 1
+    path: Assets/Scenes/LoadingScene.unity
+    guid: 7a5a94ceb9cd46f459a9c74ac28953f3
+  - enabled: 1
     path: Assets/Scenes/SmallMap.unity
     guid: 660040a9163d1f7479f2892782b18717
   - enabled: 1
-    path: Assets/Scenes/LoadingScene.unity
-    guid: 7a5a94ceb9cd46f459a9c74ac28953f3
+    path: Assets/Scenes/BigMap.unity
+    guid: ea4f33660a073de47932cb8a27dfe4f1
   m_configObjects: {}
