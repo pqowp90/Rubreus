@@ -285,6 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Index: 10
   reincarnationsNum: 0
+  agent: {fileID: 3954799188029930451}
   target: {fileID: 0}
   maxHp: 50
   hp: 0
