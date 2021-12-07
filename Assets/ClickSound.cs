@@ -14,6 +14,7 @@ public class ClickSound : MonoSingleton<ClickSound>
         audioSource = GetComponent<AudioSource>();
     }
     public void GoSound(int num){
+        if(audioSource==null)audioSource = GetComponent<AudioSource>();
         audioSource.PlayOneShot(audioClips[num]);
     }
 }
