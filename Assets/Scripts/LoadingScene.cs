@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class LoadingScene : MonoBehaviour
 {
+    [SerializeField]
+    private Image image;
+    [SerializeField]
+    private Sprite[] sprites;
+    private Vector2 screenSize;
     static string nextScene;
     [SerializeField]
     Image progressBar;
@@ -17,6 +22,9 @@ public class LoadingScene : MonoBehaviour
     }
     void Start()
     {
+        image.sprite = sprites[Random.Range(0,sprites.Length)];
+        screenSize.y = Camera.main.orthographicSize;
+        screenSize.x = screenSize.y*Camera.main.aspect;
         StartCoroutine(LoadSceneProcess());
     }
     IEnumerator LoadSceneProcess(){
@@ -26,13 +34,13 @@ public class LoadingScene : MonoBehaviour
         float timer = 0f;
         while(!op.isDone){
             yield return null;
-            playerPos.position = Camera.main.ScreenToWorldPoint(new Vector3(1473.5f-2947f*progressBar.fillAmount,0f,0f));
+            playerPos.position = (new Vector3((-screenSize.x)+screenSize.x*2f*progressBar.fillAmount,0f,10f));
             if(op.progress < 0.9f){
                 progressBar.fillAmount = op.progress;
             }
             else{
                 timer += Time.unscaledDeltaTime;
-                progressBar.fillAmount = Mathf.Lerp(0.9f, 1f, timer/3f);
+                progressBar.fillAmount = Mathf.Lerp(0.9f, 1f, timer/2f);
                 
                 if(progressBar.fillAmount >= 1f){
                     op.allowSceneActivation = true;
