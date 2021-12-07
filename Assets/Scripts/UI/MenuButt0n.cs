@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class MenuButt0n : MonoBehaviour
 {
     [SerializeField]
+    private string sceneName;
+    [SerializeField]
     private int index;
     [SerializeField]
     private GameObject gameObjectHi;
@@ -36,6 +38,12 @@ public class MenuButt0n : MonoBehaviour
             else if(index==2)Quit();
             ClickSound.Instance.GoSound(0);
             }
+    }
+    public void PushButton(){
+        GoGame();
+    }
+    private void GoGame(){
+        LoadingScene.LoadScene(sceneName);
     }
     private void Option(){
         MenuUi.Instance.Option();
