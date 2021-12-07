@@ -208,7 +208,7 @@ MonoBehaviour:
   hp: 0
   stunDeley: 0
   attackRange: 0.9
-  attackDeley: 1
+  attackDeley: 1.5
   damage: 27
   pos: {fileID: 1496682246835363686}
   boxSize: {x: 0.5, y: 0.7}
