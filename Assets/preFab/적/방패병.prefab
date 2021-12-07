@@ -177,7 +177,7 @@ NavMeshAgent:
   m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 1.35
-  m_Speed: 1.5
+  m_Speed: 1.3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 100
@@ -203,14 +203,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Index: 19
   reincarnationsNum: 0
-  agent: {fileID: 3954799188029930451}
   target: {fileID: 0}
   maxHp: 100
   hp: 0
   stunDeley: 0
   attackRange: 0.9
   attackDeley: 1
-  damage: 6
+  damage: 7
   pos: {fileID: 1496682246835363686}
   boxSize: {x: 0.5, y: 1}
 --- !u!50 &3954799188029930448
