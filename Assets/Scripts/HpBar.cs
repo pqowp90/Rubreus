@@ -19,6 +19,8 @@ public class HpBar : MonoBehaviour
         hpbar[0] = hpBarT.GetChild(0).GetComponentInChildren<Image>();
         hpbar[1] = hpBarT.GetComponent<Image>();
         hpBarT.gameObject.SetActive(true);
+        hpbar[0].enabled = false;
+        hpbar[1].enabled = false;
     }
 
     void Update()

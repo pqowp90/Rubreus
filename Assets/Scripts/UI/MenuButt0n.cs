@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuButt0n : MonoBehaviour
 {
@@ -31,11 +32,19 @@ public class MenuButt0n : MonoBehaviour
     private void Update(){
         if(mouseHi&&Input.GetMouseButtonDown(0)){
             if(index==0)Option();
+            else if(index==1)GameStart();
+            else if(index==2)Quit();
             ClickSound.Instance.GoSound(0);
             }
     }
     private void Option(){
         MenuUi.Instance.Option();
+    }
+    private void Quit(){
+        Application.Quit();
+    }
+    private void GameStart(){
+        gameObjectHi.SetActive(true);
     }
     
 }
