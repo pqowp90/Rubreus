@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 994a7623a319a934ea4c778c91fbe276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Index: 19
+  Index: 24
   reincarnationsNum: 0
   target: {fileID: 0}
   maxHp: 100

@@ -1225,7 +1225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c51cc7734541cc4b858284c25345f34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: SmallMap
+  sceneName: Tutorial
   index: 0
   gameObjectHi: {fileID: 0}
 --- !u!114 &480630123

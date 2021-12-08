@@ -43,9 +43,13 @@ public class Player : MonoBehaviour
     private GameObject gunLight;
     [SerializeField]
     private Transform effectTransform;
+    public bool die;
+    [SerializeField]
+    public Transform responePos;
+    private Collider2D collider2D1;
     void Start()
     {
-        
+        collider2D1 = GetComponent<Collider2D>();
         hp = maxHp;
         sp = maxSp;
         GameManager.Instance.playerUi.SetHpUi(hp, maxHp);
@@ -101,6 +105,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if(die)return;
         _weightAni = Mathf.Lerp(_weightAni,(float)weightAni,0.1f);
         myAnimator.SetLayerWeight(myAnimator.GetLayerIndex("TopMove"), _weightAni);
         if(Input.GetKeyDown(KeyCode.R)){
@@ -235,19 +240,30 @@ public class Player : MonoBehaviour
         angle = Mathf.Atan2(realInputX,realInputY) * Mathf.Rad2Deg;
     }
     public void Damaged(float damage){
-        
+        if(die)return;
         effectTransform.localPosition = new Vector3(Random.Range(-0.3f,0.3f),1f,Random.Range(-0.1f,0.1f));
         AllPoolManager.Instance.GetObjPos(Random.Range(16,19), effectTransform).gameObject.SetActive(true);
         CinemachineShake.Instance.ShakeCamera(3, 0.2f);
         if(hp-damage<=0){
             hp = 0f;
-            Die();
+            StartCoroutine(Die());
         }else
             hp -= damage;
         GameManager.Instance.playerUi.SetHpUi(hp, maxHp);
         
     }
-    private void Die(){
-        
+    private IEnumerator Die(){
+        collider2D1.enabled = false;
+        GameManager.Instance.playerUi.OnUI(0f);
+        myAnimator.SetTrigger("die");
+        die = true;
+        yield return new WaitForSeconds(10f);
+        collider2D1.enabled = true;
+        transform.position = responePos.position;
+        hp = maxHp;
+        myAnimator.SetTrigger("die2");
+        die = false;
+        GameManager.Instance.playerUi.SetHpUi(hp, maxHp);
     } 
+    
 }

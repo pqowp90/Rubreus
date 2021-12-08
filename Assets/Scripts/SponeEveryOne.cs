@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SponeEveryOne : MonoBehaviour
 {
+    [SerializeField]
+    private Text waveText;
+    [SerializeField]
+    private GameObject hi;
     private float time=5f;
     private int hello=0;
     [Header("웨이브")]
@@ -13,6 +18,9 @@ public class SponeEveryOne : MonoBehaviour
     private bool skipWave;
     void Start()
     {
+        wave=0;
+        
+        waveText.text = string.Format("{0}", wave+1);
         int a=0;
         foreach (var wave in waves){
             foreach (var sponer in wave.sponers){
@@ -28,22 +36,30 @@ public class SponeEveryOne : MonoBehaviour
     void FixedUpdate()
     {
         if(skipWave)return;
+        hi.SetActive(false);
         if(enemys.Count!=0){
             foreach (var enemy in enemys){
-                if(enemy.activeSelf == false){
+                if(enemy==null)continue;
+                if(enemy.activeSelf == false||(enemy.gameObject == null)){
+                    
                     enemys.Remove(enemy);
                     break;
                 }
             }
         }
         if(waves[wave].sponers.Count<=hello){
-            if(enemys.Count==0){
+            if(enemys.Count<=1){
                 hello=0;
+                
+                wave++;
+                waveText.text = string.Format("{0}", wave+1);
                 if(waves.Count<=wave){
                     Debug.Log("와 게임을 클리어 하셨어요 축하축하");
+                    LoadingScene.LoadScene("MainRobby");
+                    Destroy(gameObject);
                 }
-                wave++;
                 skipWave = true;
+                hi.SetActive(true);
             }
             return;
         }

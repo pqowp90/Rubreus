@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoSingleton<GameManager>
 {
+    [SerializeField]
+    private GameObject hihihihihihi;
     public PlayerUi playerUi;
     public Canvas hpBarCanvas;
     [SerializeField]
@@ -31,7 +33,9 @@ public class GameManager : MonoSingleton<GameManager>
     }
     public void BumbHello(){
         isBumbCharging = true;
+        hihihihihihi.SetActive(true);
         bumbPos = FindObjectOfType<RealBumb>().transform;
+        player.GetComponent<Player>().responePos = bumbPos;
     }
     public Transform MakePoTapTap(int num, Transform pos){
         Transform poTap = AllPoolManager.Instance.GetObjPos(user.potapList[num].indexNum, pos);
