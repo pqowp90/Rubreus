@@ -5421,6 +5421,7 @@ GameObject:
   - component: {fileID: 775252161}
   - component: {fileID: 775252160}
   - component: {fileID: 775252164}
+  - component: {fileID: 775252165}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5522,6 +5523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e892a833bb0961640bb3c0a8875081ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadAPI: {fileID: 0}
   image: {fileID: 1177465129}
   sprites:
   - {fileID: 21300000, guid: dfb1a4ae2945c744ca27c4fd579b6dcd, type: 3}
@@ -5529,6 +5531,20 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4d6e625aac30ee94fb61a99653803fa2, type: 3}
   progressBar: {fileID: 2138424898}
   playerPos: {fileID: 1697739283}
+--- !u!114 &775252165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775252159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32a4c45b495052744ac9164819506dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  done: 0
+  enemySO: {fileID: 11400000, guid: afb81b906c8255341a43d9d5eaf67ce3, type: 2}
 --- !u!1 &778175599
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ public class SponeEveryOne : MonoBehaviour
     {
         wave=0;
         
-        waveText.text = string.Format("{0}", wave+1);
+        waveText.text = string.Format("{0}", wave);
         int a=0;
         foreach (var wave in waves){
             foreach (var sponer in wave.sponers){
@@ -49,13 +49,18 @@ public class SponeEveryOne : MonoBehaviour
         }
         if(waves[wave].sponers.Count<=hello){
             if(enemys.Count<=1){
+                for (int i = 0; i < enemys.Count; i++){
+                    enemys.RemoveAt(i);
+                }
+                
                 hello=0;
                 
                 wave++;
-                waveText.text = string.Format("{0}", wave+1);
+                waveText.text = string.Format("Wave:{0}", wave);
                 if(waves.Count<=wave){
-                    Debug.Log("와 게임을 클리어 하셨어요 축하축하");
-                    LoadingScene.LoadScene("MainRobby");
+                    FindObjectOfType<RealBumb>().StartBBBBBBBBBBBBBBBBBBaaaaaaaaaaaaaaaannnnnnnnnngggggggggggg();
+                    // Debug.Log("와 게임을 클리어 하셨어요 축하축하");
+                    // LoadingScene.LoadScene("MainRobby");
                     Destroy(gameObject);
                 }
                 skipWave = true;

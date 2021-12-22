@@ -5,6 +5,7 @@ using UnityEngine.Experimental.Rendering.LWRP ;
 using UnityEngine.EventSystems;
 public class RangePotap : MonoBehaviour
 {
+    
     public int num;
     private SpriteRenderer mySpriteRenderer;
     private UnityEngine.Experimental.Rendering.Universal.Light2D myLight2D;
@@ -18,10 +19,12 @@ public class RangePotap : MonoBehaviour
         myLight2D = GetComponentInChildren<UnityEngine.Experimental.Rendering.Universal.Light2D>();
     }
     private void OnEnable(){
+        
         transform.localScale = new Vector3(1f,1f,1f)*GameManager.Instance.CurrentUser.potapList[num].range*2f;
         if(myLight2D == null)myLight2D=GetComponentInChildren<UnityEngine.Experimental.Rendering.Universal.Light2D>();
         myLight2D.pointLightOuterRadius = GameManager.Instance.CurrentUser.potapList[num].range;
     }
+    
     private void Update(){
         if(!hihi) transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition)+new Vector3(0f,0f,10f);
         int layerMask = (1 << LayerMask.NameToLayer("Wall")) + (1 << LayerMask.NameToLayer("Range"));
@@ -55,6 +58,7 @@ public class RangePotap : MonoBehaviour
             GameManager.Instance.isMakeingPotap = false;
         }
         if(Input.GetMouseButtonDown(0)&&good&&!EventSystem.current.IsPointerOverGameObject()){
+            GameManager.Instance.AddMoney(-GameManager.Instance.CurrentUser.potapList[num].cost);
             myPos = transform.position;
             GameManager.Instance.isMakeingPotap = false;
             hihi=true;

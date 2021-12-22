@@ -4,6 +4,8 @@ using UnityEngine;
 using DG.Tweening;
 public class PoTapBase : MonoBehaviour
 {
+    
+    
     [SerializeField]
     protected float bulletDamage, bulletSpeed,stunTime;
     protected Animator animator;
@@ -17,13 +19,14 @@ public class PoTapBase : MonoBehaviour
     protected ParticleSystem myParticleSystem;
     protected Transform targetTransform,playerPos;
     protected int targetReincarnations;
+    
     protected virtual void Start()
     {
         animator = GetComponent<Animator>();
         playerPos = FindObjectOfType<Player>().transform;
-        
-        
+
     }
+    
     
     protected void BangAniTrigger(){
         animator.SetTrigger("bang");
@@ -61,6 +64,8 @@ public class PoTapBase : MonoBehaviour
         _targetTransform = near;
         return near;
     }
+    
+    
     
     protected void TimeGo(){
         gunDeley+=Time.deltaTime;

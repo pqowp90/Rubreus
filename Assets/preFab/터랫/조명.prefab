@@ -84,6 +84,7 @@ GameObject:
   - component: {fileID: 4332293828261133119}
   - component: {fileID: 3814184949722437568}
   - component: {fileID: 1649972537347137545}
+  - component: {fileID: 7359921597303162366}
   m_Layer: 12
   m_Name: "\uC870\uBA85"
   m_TagString: Untagged
@@ -169,6 +170,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7522466ada51de4b93472f1e81a569b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 0
+  lifeTime: 0
+  maxLifeTime: 0
+  rangePotap: {fileID: 0}
+  lifeCutPerSecond: 5
 --- !u!58 &1649972537347137545
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -185,3 +191,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.06
+--- !u!114 &7359921597303162366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6051718749177003546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec454140ba670443b022f6ce2ba75f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpBarPrefab: {fileID: 1102362291787192500, guid: 6f55d3f736a16a148bfb7527cd3e53f9,
+    type: 3}
+  canvas: {fileID: 0}
+  hpBarT: {fileID: 0}
+  hpBarColor: {r: 0.31359026, g: 0.4928466, b: 0.8207547, a: 1}
+  isEnemy: 0

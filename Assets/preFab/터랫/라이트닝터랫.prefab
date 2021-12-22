@@ -232,6 +232,7 @@ GameObject:
   - component: {fileID: 219374892}
   - component: {fileID: 5020522437364126690}
   - component: {fileID: 6508056825468291787}
+  - component: {fileID: -6205976051732417358}
   m_Layer: 12
   m_Name: "\uB77C\uC774\uD2B8\uB2DD\uD130\uB7AB"
   m_TagString: Untagged
@@ -478,6 +479,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.15
+--- !u!114 &-6205976051732417358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6719603804879983486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec454140ba670443b022f6ce2ba75f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpBarPrefab: {fileID: 1102362291787192500, guid: 6f55d3f736a16a148bfb7527cd3e53f9,
+    type: 3}
+  canvas: {fileID: 0}
+  hpBarT: {fileID: 0}
+  hpBarColor: {r: 0.31359026, g: 0.4928466, b: 0.8207547, a: 1}
+  isEnemy: 0
 --- !u!1 &6942026437868715782
 GameObject:
   m_ObjectHideFlags: 0

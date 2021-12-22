@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoSingleton<GameManager>
 {
+    [SerializeField]
+    private Text clearText;
     [SerializeField]
     private GameObject hihihihihihi;
     public PlayerUi playerUi;
@@ -21,6 +24,13 @@ public class GameManager : MonoSingleton<GameManager>
     public bool isMakeingPotap=false;
     public bool isBumbCharging;
     public Transform bumbPos;
+    private int money;
+    private GameObject panelboom;
+    [SerializeField]
+    private Text moneyText;
+    public MousePos look;
+    public bool gameEnd;
+    
     public void CreatePenal(){        
         for(int j=0;j<user.potapList.Count;j++){
             GameObject newPanel = null;
@@ -29,20 +39,43 @@ public class GameManager : MonoSingleton<GameManager>
             Penal penal = newPanel.GetComponent<Penal>();
             penal.potapImage.sprite = turrets[j];
             penal.num = j;
+            penal.costText.text = "$"+user.potapList[j].cost;
+            if(j == 6){
+                panelboom = penal.gameObject;
+            }
         }
+    }
+    public int GetMoney(){return money;}
+    public void AddMoney(int money){
+        this.money += money;
+        moneyText.text = string.Format("Money:${0}", this.money);
     }
     public void BumbHello(){
         isBumbCharging = true;
+        Destroy(panelboom);
         hihihihihihi.SetActive(true);
         bumbPos = FindObjectOfType<RealBumb>().transform;
         player.GetComponent<Player>().responePos = bumbPos;
     }
     public Transform MakePoTapTap(int num, Transform pos){
         Transform poTap = AllPoolManager.Instance.GetObjPos(user.potapList[num].indexNum, pos);
+        Falldown falldown = poTap.GetComponent<Falldown>();
+        if(falldown!=null){
+            falldown.maxLifeTime = user.potapList[num].maxLifeTime;
+            falldown.index = user.potapList[num].indexNum;
+        }
+            
         poTap.gameObject.SetActive(true);
         return poTap;
     }
+    public void GameClear(bool hihi){
+        clearText.text = (hihi)?"mission clear":"mission fail";
+        gameEnd = true;
+    }
     private void Awake(){
+        look = FindObjectOfType<MousePos>();
+        money = 500;    
+        moneyText.text = string.Format("Money:${0}", this.money);
         playerUi = FindObjectOfType<PlayerUi>();
         player = FindObjectOfType<Player>().transform;
         CreatePenal();
@@ -50,7 +83,7 @@ public class GameManager : MonoSingleton<GameManager>
     private void Update(){
         if(Input.GetKeyDown(KeyCode.Escape)){
             MenuUi.Instance.Option();
-            ClickSound.Instance.GoSound(0);
+            
         }
     }
     public Vector3 GetrandomPos(){

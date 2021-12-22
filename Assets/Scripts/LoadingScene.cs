@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class LoadingScene : MonoBehaviour
 {
     [SerializeField]
+    private LoadAPI loadAPI;
+    [SerializeField]
     private Image image;
     [SerializeField]
     private Sprite[] sprites;
@@ -22,6 +24,7 @@ public class LoadingScene : MonoBehaviour
     }
     void Start()
     {
+        loadAPI = FindObjectOfType<LoadAPI>();
         image.sprite = sprites[Random.Range(0,sprites.Length)];
         screenSize.y = Camera.main.orthographicSize;
         screenSize.x = screenSize.y*Camera.main.aspect;
@@ -43,6 +46,7 @@ public class LoadingScene : MonoBehaviour
                 progressBar.fillAmount = Mathf.Lerp(0.9f, 1f, timer/2f);
                 
                 if(progressBar.fillAmount >= 1f){
+                    if(!loadAPI.done)continue;
                     op.allowSceneActivation = true;
                     yield break;
                 }

@@ -468,7 +468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc9fe0ac82a2c1645a59596726828de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextDeley: 3
+  nextDeley: 4
   sceneName: MainRobby
 --- !u!1 &1003443842
 GameObject:

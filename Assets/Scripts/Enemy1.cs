@@ -27,11 +27,22 @@ public class Enemy1 : MonoBehaviour
     protected Transform pos;
     [SerializeField]
     protected Vector2 boxSize;
+    private EnemySO enemySO;
+    [SerializeField]
+    private int money;
+    [SerializeField]
+    private int num;
     protected virtual void Awake()	{
         animator = GetComponent<Animator>();
         hpBar = GetComponent<HpBar>();
 		agent = GetComponent<NavMeshAgent>();
         InvokeRepeating("SetRotate", 0f, 0.1f);
+        enemySO = Resources.Load<EnemySO>("Enemy SO");
+        maxHp = enemySO.enemies[num].maxHp;
+        damage = enemySO.enemies[num].damage;
+        attackDeley = enemySO.enemies[num].attackDeley;
+        attackRange = enemySO.enemies[num].attackRange;
+        Index = enemySO.enemies[num].index;
         //agent.SetDestination(target.position);
 	}
     protected void SetRotate(){
@@ -56,13 +67,13 @@ public class Enemy1 : MonoBehaviour
         hp=maxHp;
     }
     protected virtual void Attact(){
-        int layerMask = (1 << LayerMask.NameToLayer("Player")) + (1 << LayerMask.NameToLayer("Bumb"));
+        int layerMask = (1 << LayerMask.NameToLayer("Player")) + (1 << LayerMask.NameToLayer("Turret"));
 
         Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, transform.rotation.z, layerMask);
 
         foreach(Collider2D collider2D in collider2Ds){
             if(collider2D.tag == "Bumb"){
-                collider2D.GetComponent<RealBumb>();
+                collider2D.GetComponent<RealBumb>().Startpeeeeeeezzz();
             }
             if(collider2D.tag == "Player"){
                 collider2D.GetComponent<Player>().Damaged(damage);
@@ -123,10 +134,16 @@ public class Enemy1 : MonoBehaviour
         if(hp<=0){
             reincarnationsNum++;
             hpBar.DestroyHpbar();
+            GameManager.Instance.AddMoney(money);
             AllPoolManager.Instance.PoolObj(transform,Index);
         }
     }
     protected void OnTriggerStay2D(Collider2D collider2D){
+        if(collider2D.gameObject.layer == 16){
+            Debug.Log("화염");
+            Damaged(1f, 0f);
+            return;
+        }
         if(collider2D.gameObject.layer != 8||playerChase)return;
         int layerMask = (1 << LayerMask.NameToLayer("Player")) + (1 << LayerMask.NameToLayer("Wall"));
         RaycastHit2D ray;

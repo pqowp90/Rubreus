@@ -11,17 +11,22 @@ public class HpBar : MonoBehaviour
     private RectTransform hpBarT;
     private Image[] hpbar = new Image[2];
     private float showTime=0f;
+    [SerializeField]private Color hpBarColor;
+    [SerializeField]private bool isEnemy;
     
     void OnEnable()
     {
+        
         canvas = GameManager.Instance.hpBarCanvas.transform;
         hpBarT = AllPoolManager.Instance.GetObjTransform(2 , GameManager.Instance.hpBarCanvas.transform).GetComponent<RectTransform>();
         hpbar[0] = hpBarT.GetChild(0).GetComponentInChildren<Image>();
         hpbar[1] = hpBarT.GetComponent<Image>();
         hpBarT.gameObject.SetActive(true);
+        hpbar[0].color = hpBarColor;
         hpbar[0].enabled = false;
         hpbar[1].enabled = false;
     }
+    
 
     void Update()
     {
@@ -29,8 +34,8 @@ public class HpBar : MonoBehaviour
             showTime-=Time.deltaTime;
         }
 
-        hpbar[0].enabled = !(showTime<0f);
-        hpbar[1].enabled = !(showTime<0f);
+        hpbar[0].enabled = (isEnemy)?!(showTime<0f):true;
+        hpbar[1].enabled = (isEnemy)?!(showTime<0f):true;
         
         Vector3 _hpBarPos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x,transform.position.y+0.5f,0f));
         hpBarT.position  = new Vector3(transform.position.x,transform.position.y+0.4f,0f);

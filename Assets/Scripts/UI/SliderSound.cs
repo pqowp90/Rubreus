@@ -11,9 +11,9 @@ public class SliderSound : MonoBehaviour
 
     [SerializeField]
     private Text valueText,nameText;
-    private void Awake(){
+    private void Start(){
         slider = GetComponentInChildren<Slider>();
-        audioMixer = Resources.Load<AudioMixer>("AllMixer");
+        audioMixer = MenuUi.Instance.audioMixer;
         ValueChanged(PlayerPrefs.GetFloat(nameText.text, 0f));
         slider.value = PlayerPrefs.GetFloat(nameText.text, 0f);
     }

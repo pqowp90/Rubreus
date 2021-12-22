@@ -5,14 +5,16 @@ using DG.Tweening;
 
 public class RealBumb : MonoBehaviour
 {
+    private Animator animator;
     [SerializeField]
     private Transform body1;
     [SerializeField]
     private Transform lightPos;
     private float myrotate=0f;
+    private float speed=2f;
     private IEnumerator RotateBody1(){
         while(true){
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(speed);
             body1.DORotate(new Vector3(0f,0f,myrotate),0.6f);
             myrotate+=30f;
         }
@@ -24,10 +26,45 @@ public class RealBumb : MonoBehaviour
             AllPoolManager.Instance.GetObjPos(14, lightPos).gameObject.SetActive(true);
         }
     }
+    public void Startpeeeeeeezzz(){
+        StartCoroutine(peeeeeeezzz());
+    }
+    public void StartBBBBBBBBBBBBBBBBBBaaaaaaaaaaaaaaaannnnnnnnnngggggggggggg(){
+        StartCoroutine(BBBBBBBBBBBBBBBBBBaaaaaaaaaaaaaaaannnnnnnnnngggggggggggg());
+    }
+    public IEnumerator peeeeeeezzz(){
+        if(!GameManager.Instance.gameEnd){
+            GameManager.Instance.gameEnd = true;
+            speed = 100f;
+            GameManager.Instance.look.enabled=false;
+            GameManager.Instance.look.transform.position = transform.position;
+            
+            yield return new WaitForSeconds(2f);
+            GameManager.Instance.GameClear(false);
+            yield return new WaitForSeconds(2f);
+            GoRobby();
+        }
+    }
+    public IEnumerator BBBBBBBBBBBBBBBBBBaaaaaaaaaaaaaaaannnnnnnnnngggggggggggg(){
+        if(!GameManager.Instance.gameEnd){
+            GameManager.Instance.gameEnd = true;
+            speed = 0.2f;
+            GameManager.Instance.look.enabled=false;
+            GameManager.Instance.look.transform.position = transform.position;
+            
+            yield return new WaitForSeconds(2f);
+            GameManager.Instance.GameClear(true);
+            yield return new WaitForSeconds(2f);
+            GoRobby();
+        }
+    }
+    public void GoRobby(){
+        LoadingScene.LoadScene("MainRobby");
+    }
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
         GameManager.Instance.BumbHello();
         StartCoroutine(RotateBody1());
         StartCoroutine(Lightning());

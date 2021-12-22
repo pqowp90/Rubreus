@@ -172,6 +172,7 @@ public class Player : MonoBehaviour
         
     }
     private void FixedUpdate(){
+        if(die)return;
         Move();
         float hi = Mathf.Abs(lookAngle-beforeAngle);
         //if(hi<1.2f)hi=0f;
@@ -199,7 +200,7 @@ public class Player : MonoBehaviour
         //     beforeAngle = lookAngle;
         
     }
-    private void OnTriggerEnter2D(Collider2D collider2D){
+    private void OnTriggerStay2D(Collider2D collider2D){
         if(collider2D.gameObject.layer != 6)return;
         //if(wallHi||isReloading)return;
         //wallHi=true;
