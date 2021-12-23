@@ -10,12 +10,13 @@ public class SponeEveryOne : MonoBehaviour
     [SerializeField]
     private GameObject hi;
     private float time=5f;
-    private int hello=0;
+    public int hello=0;
     [Header("웨이브")]
     public List<Wave> waves = new List<Wave>();
     public List<GameObject> enemys = new List<GameObject>();
     public int wave;
     private bool skipWave;
+    private int usingCor;
     void Start()
     {
         wave=0;
@@ -39,16 +40,13 @@ public class SponeEveryOne : MonoBehaviour
         hi.SetActive(false);
         if(enemys.Count!=0){
             foreach (var enemy in enemys){
-                if(enemy==null)continue;
-                if(enemy.activeSelf == false||(enemy.gameObject == null)){
-                    
-                    enemys.Remove(enemy);
-                    break;
-                }
+                if(enemy==null){enemys.Remove(enemy);break;}
+                else if(enemy.activeSelf == false){enemys.Remove(enemy);break;}
+                
             }
         }
-        if(waves[wave].sponers.Count<=hello){
-            if(enemys.Count<=1){
+        if(waves[wave].sponers.Count<hello&&usingCor == 0){
+            if(enemys.Count<=0){
                 for (int i = 0; i < enemys.Count; i++){
                     enemys.RemoveAt(i);
                 }
@@ -59,8 +57,6 @@ public class SponeEveryOne : MonoBehaviour
                 waveText.text = string.Format("Wave:{0}", wave);
                 if(waves.Count<=wave){
                     FindObjectOfType<RealBumb>().StartBBBBBBBBBBBBBBBBBBaaaaaaaaaaaaaaaannnnnnnnnngggggggggggg();
-                    // Debug.Log("와 게임을 클리어 하셨어요 축하축하");
-                    // LoadingScene.LoadScene("MainRobby");
                     Destroy(gameObject);
                 }
                 skipWave = true;
@@ -74,16 +70,19 @@ public class SponeEveryOne : MonoBehaviour
         if(time >= 5f){
             time = 0f;
             
-            foreach (var sponer in waves[wave].sponers[hello].enemySpones){
-                StartCoroutine(EnemySponehi(sponer.deley,sponer.Num,sponer.Index,sponer.SponePos));
+            if(waves[wave].sponers.Count>hello){
+                foreach (var sponer in waves[wave].sponers[hello].enemySpones){
+                    StartCoroutine(EnemySponehi(sponer.deley,sponer.Num,sponer.Index,sponer.SponePos));
+                }
             }
-            
             hello++;
+            
         }
         
         
     }
     private IEnumerator EnemySponehi(float deley, int Num, int Index, Transform SponePos){
+        usingCor++;
         for(int i=0;i<Num;i++){
             GameObject enemyhi;
             enemyhi = AllPoolManager.Instance.GetObjPos(Index,SponePos).gameObject;
@@ -91,5 +90,6 @@ public class SponeEveryOne : MonoBehaviour
             enemys.Add(enemyhi);
             yield return new WaitForSeconds(deley);
         }
+        usingCor--;
     }
 }
