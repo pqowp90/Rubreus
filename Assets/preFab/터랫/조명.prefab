@@ -171,10 +171,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
-  lifeTime: 0
-  maxLifeTime: 0
+  lifeTime: 40
+  maxLifeTime: 40
   rangePotap: {fileID: 0}
-  lifeCutPerSecond: 2
+  lifeCutPerSecond: 1
 --- !u!58 &1649972537347137545
 CircleCollider2D:
   m_ObjectHideFlags: 0

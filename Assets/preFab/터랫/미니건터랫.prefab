@@ -5108,7 +5108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ee42d6ca0e78d4fac3f91c1ed3575b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletDamage: 5
+  bulletDamage: 7
   bulletSpeed: 50
   stunTime: 0
   whatLayerMask:
@@ -5151,6 +5151,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7522466ada51de4b93472f1e81a569b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 0
+  lifeTime: 200
+  maxLifeTime: 200
+  rangePotap: {fileID: 0}
+  lifeCutPerSecond: 0
 --- !u!58 &7650130110234464456
 CircleCollider2D:
   m_ObjectHideFlags: 0

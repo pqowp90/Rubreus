@@ -172,14 +172,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed209d2fccca57340a7382cd707ebf4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletDamage: 10
-  bulletSpeed: 1
-  stunTime: 0.2
+  bulletDamage: 23
+  bulletSpeed: 1.5
+  stunTime: 0.4
   whatLayerMask:
     serializedVersion: 2
     m_Bits: 2048
   myGunDeley: 1
-  range: 4
+  range: 8
   casingOutlet: {fileID: 3607659997964900378}
   shootingPos: {fileID: 3607659997964900378}
   chukTransform: {fileID: 3607659997964900378}
@@ -196,6 +196,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7522466ada51de4b93472f1e81a569b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 0
+  lifeTime: 300
+  maxLifeTime: 300
+  rangePotap: {fileID: 0}
+  lifeCutPerSecond: 0
 --- !u!95 &3607659996723925930
 Animator:
   serializedVersion: 3
