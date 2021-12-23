@@ -5,13 +5,14 @@ using DG.Tweening;
 
 public class Drone : MonoBehaviour
 {
+    public RangePotap rangePotap;
     public void droneMove(int num, Vector3 targetPos){
 
         Vector3 startPos = GameManager.Instance.GetrandomPos();
         transform.position = startPos;
         
         Transform poTap=GameManager.Instance.MakePoTapTap(num, transform);
-
+        poTap.GetComponent<Falldown>().rangePotap = rangePotap;
         poTap.SetParent(transform);
         poTap.localScale = new Vector3(1.5f,1.5f,1.5f);
 

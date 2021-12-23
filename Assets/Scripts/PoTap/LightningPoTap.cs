@@ -26,6 +26,7 @@ public class LightningPoTap : PoTapBase
             if(targetTransform.GetComponent<Enemy1>().reincarnationsNum!=targetReincarnations)return;
             FindTarger(transform.position, ref targetTransform);
             if(targetTransform == null)return;
+            falldown.LosePotapHp();
             gunDeley=0f;
             boundCount=0;
             poss.RemoveRange(0,poss.Count);

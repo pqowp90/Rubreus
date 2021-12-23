@@ -11,17 +11,20 @@ public class Falldown : MonoBehaviour
     public RangePotap rangePotap;
     [SerializeField]
     private float lifeCutPerSecond;
-    private void Start(){
+    private void OnEnable(){
+
+        lifeTime = maxLifeTime;
         hpBar = GetComponent<HpBar>();
         if(lifeCutPerSecond>0){
             StartCoroutine(CutLife());
         }
+        
     }
     private IEnumerator CutLife(){
         while(true){
-            lifeTime--;
-            hpBar.SetHp(lifeTime, maxLifeTime);
+            
             yield return new WaitForSeconds(lifeCutPerSecond);
+            LosePotapHp();
         }
     }
     public void LosePotapHp(){
@@ -29,6 +32,8 @@ public class Falldown : MonoBehaviour
         hpBar.SetHp(lifeTime, maxLifeTime);
         if(lifeTime<=0){
             hpBar.DestroyHpbar();
+            
+            AllPoolManager.Instance.PoolObj(rangePotap.transform, 9);
             AllPoolManager.Instance.PoolObj(transform, index);
         }
     }

@@ -19,12 +19,14 @@ public class PoTapBase : MonoBehaviour
     protected ParticleSystem myParticleSystem;
     protected Transform targetTransform,playerPos;
     protected int targetReincarnations;
+    protected Falldown falldown;
+    
     
     protected virtual void Start()
     {
         animator = GetComponent<Animator>();
         playerPos = FindObjectOfType<Player>().transform;
-
+        falldown = GetComponent<Falldown>();
     }
     
     

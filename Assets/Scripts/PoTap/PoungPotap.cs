@@ -12,6 +12,7 @@ public class PoungPotap : PoTapBase
     private void FireGun(){
         if(targetTransform!=null&&gunDeley>=myGunDeley){
             if(targetTransform.GetComponent<Enemy1>().reincarnationsNum!=targetReincarnations)return;
+            falldown.LosePotapHp();
             BangAniTrigger();
             gunDeley=0f;
             Bumb bullet = AllPoolManager.Instance.GetObjPos(12,transform).GetComponent<Bumb>();

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PoTap : PoTapBase
 {
-    private Falldown falldown;
+    
     protected override void Start()
     {
         base.Start();
-        falldown = GetComponent<Falldown>();
+        
         
     }
     private void FireGun(){

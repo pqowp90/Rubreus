@@ -22,6 +22,7 @@ public class FirePotap : PoTapBase
             if(gunDeley>=myGunDeley){
                 if(targetTransform.GetComponent<Enemy1>().reincarnationsNum!=targetReincarnations)return;
                 gunDeley = 0f;
+                falldown.LosePotapHp();
                 LookAtTarget();
                 StartCoroutine(Fire());
             }

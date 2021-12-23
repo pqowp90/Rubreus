@@ -13,13 +13,16 @@ public class RangePotap : MonoBehaviour
     [SerializeField]
     public bool good = true;
     private Vector2 myPos;
-    void Start()
+    void Awake()
     {
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         myLight2D = GetComponentInChildren<UnityEngine.Experimental.Rendering.Universal.Light2D>();
     }
     private void OnEnable(){
-        
+        if(mySpriteRenderer == null)Awake();
+        mySpriteRenderer.enabled = true;
+        good = true;
+        hihi = false;
         transform.localScale = new Vector3(1f,1f,1f)*GameManager.Instance.CurrentUser.potapList[num].range*2f;
         if(myLight2D == null)myLight2D=GetComponentInChildren<UnityEngine.Experimental.Rendering.Universal.Light2D>();
         myLight2D.pointLightOuterRadius = GameManager.Instance.CurrentUser.potapList[num].range;
@@ -71,8 +74,11 @@ public class RangePotap : MonoBehaviour
     public void MakePoTap(){
         transform.position = myPos;
         Transform drone = AllPoolManager.Instance.GetObj(8);
+        drone.GetComponent<Drone>().rangePotap = this;
         drone.position = new Vector3(500f,500f,0f);
+        
         drone.GetComponent<Drone>().droneMove(num, transform.position);
+        
         drone.gameObject.SetActive(true);
     }
 }

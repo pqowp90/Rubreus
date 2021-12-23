@@ -174,7 +174,7 @@ MonoBehaviour:
   lifeTime: 0
   maxLifeTime: 0
   rangePotap: {fileID: 0}
-  lifeCutPerSecond: 5
+  lifeCutPerSecond: 2
 --- !u!58 &1649972537347137545
 CircleCollider2D:
   m_ObjectHideFlags: 0
