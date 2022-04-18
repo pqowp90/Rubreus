@@ -789,6 +789,7 @@ GameObject:
   - component: {fileID: 390873641}
   - component: {fileID: 390873640}
   - component: {fileID: 390873639}
+  - component: {fileID: 390873638}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -817,6 +818,21 @@ RectTransform:
   m_AnchoredPosition: {x: 1367.3474, y: -394.6}
   m_SizeDelta: {x: 700, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &390873638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390873636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c51cc7734541cc4b858284c25345f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: BigMap
+  index: 0
+  gameObjectHi: {fileID: 0}
 --- !u!114 &390873639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -860,7 +876,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 390873640}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 390873638}
+        m_TargetAssemblyTypeName: MenuButt0n, Assembly-CSharp
+        m_MethodName: PushButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &390873640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1334,6 +1362,7 @@ GameObject:
   - component: {fileID: 514103481}
   - component: {fileID: 514103480}
   - component: {fileID: 514103479}
+  - component: {fileID: 514103478}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -1362,6 +1391,21 @@ RectTransform:
   m_AnchoredPosition: {x: 2234.6948, y: -394.6}
   m_SizeDelta: {x: 700, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &514103478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514103476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c51cc7734541cc4b858284c25345f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: SmallMap
+  index: 0
+  gameObjectHi: {fileID: 0}
 --- !u!114 &514103479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1405,7 +1449,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 514103480}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 514103478}
+        m_TargetAssemblyTypeName: MenuButt0n, Assembly-CSharp
+        m_MethodName: PushButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &514103480
 MonoBehaviour:
   m_ObjectHideFlags: 0

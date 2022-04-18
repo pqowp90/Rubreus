@@ -31,11 +31,13 @@ public class GameManager : MonoSingleton<GameManager>
     public MousePos look;
     public bool gameEnd;
     
-    public void CreatePenal(){        
+    public void CreatePenal(){
+        DownLoadUI.Instance.panels.Clear();
         for(int j=0;j<user.potapList.Count;j++){
             GameObject newPanel = null;
             newPanel = Instantiate(potapPenal,potapPenal.transform.parent);
-            newPanel.SetActive(true);
+            //newPanel.SetActive(true);
+            DownLoadUI.Instance.panels.Add(newPanel.transform);
             Penal penal = newPanel.GetComponent<Penal>();
             penal.potapImage.sprite = turrets[j];
             penal.num = j;
@@ -52,6 +54,7 @@ public class GameManager : MonoSingleton<GameManager>
     }
     public void BumbHello(){
         isBumbCharging = true;
+        DownLoadUI.Instance.panels.Remove(panelboom.transform);
         Destroy(panelboom);
         hihihihihihi.SetActive(true);
         bumbPos = FindObjectOfType<RealBumb>().transform;
@@ -74,7 +77,7 @@ public class GameManager : MonoSingleton<GameManager>
     }
     private void Awake(){
         look = FindObjectOfType<MousePos>();
-        money = 500;    
+        money = 350;
         moneyText.text = string.Format("Money:${0}", this.money);
         playerUi = FindObjectOfType<PlayerUi>();
         player = FindObjectOfType<Player>().transform;

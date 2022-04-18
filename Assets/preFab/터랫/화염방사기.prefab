@@ -341,16 +341,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1f3c84ff304ac44d853320d8a6cb772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletDamage: 0
-  bulletSpeed: 0
+  bulletDamage: 15
+  bulletSpeed: 10
   stunTime: 0
   whatLayerMask:
     serializedVersion: 2
     m_Bits: 2048
   myGunDeley: 5
-  range: 3
+  range: 4
   casingOutlet: {fileID: 0}
-  shootingPos: {fileID: 0}
+  shootingPos: {fileID: 8299037194552703592}
   chukTransform: {fileID: 3606294393751525269}
   myParticleSystem: {fileID: 0}
   fire: {fileID: 8213976340509134936}

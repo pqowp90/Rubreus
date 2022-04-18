@@ -14,7 +14,8 @@ public class Penal : MonoBehaviour
 
         if(GameManager.Instance.isMakeingPotap==true)return;
         GameManager.Instance.isMakeingPotap = true;
-        
+
+        DownLoadUI.Instance.OffPanels();
         RangePotap drone = AllPoolManager.Instance.GetObj(9).GetComponent<RangePotap>();
         drone.num = num;
         drone.gameObject.SetActive(true);

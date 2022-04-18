@@ -21,7 +21,7 @@ public class SponeEveryOne : MonoBehaviour
     {
         wave=0;
         
-        waveText.text = string.Format("{0}", wave);
+        waveText.text = string.Format("Wave:{0}", wave);
         int a=0;
         foreach (var wave in waves){
             foreach (var sponer in wave.sponers){

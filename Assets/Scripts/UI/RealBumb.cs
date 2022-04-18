@@ -27,12 +27,12 @@ public class RealBumb : MonoBehaviour
         }
     }
     public void Startpeeeeeeezzz(){
-        StartCoroutine(peeeeeeezzz());
+        StartCoroutine(Peeeeeeezzz());
     }
     public void StartBBBBBBBBBBBBBBBBBBaaaaaaaaaaaaaaaannnnnnnnnngggggggggggg(){
         StartCoroutine(BBBBBBBBBBBBBBBBBBaaaaaaaaaaaaaaaannnnnnnnnngggggggggggg());
     }
-    public IEnumerator peeeeeeezzz(){
+    public IEnumerator Peeeeeeezzz(){
         if(!GameManager.Instance.gameEnd){
             GameManager.Instance.gameEnd = true;
             speed = 100f;
