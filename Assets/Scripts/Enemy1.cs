@@ -43,7 +43,7 @@ public class Enemy1 : MonoBehaviour
         attackDeley = enemySO.enemies[num].attackDeley;
         attackRange = enemySO.enemies[num].attackRange;
         Index = enemySO.enemies[num].index;
-        //agent.SetDestination(target.position);
+        money = enemySO.enemies[num].money;
 	}
     protected void SetRotate(){
         if(target == null)return; 

@@ -9,4 +9,5 @@ public class EnemyInfo
     public float damage;
     public float attackDeley;
     public float attackRange;
+    public int money;
 }

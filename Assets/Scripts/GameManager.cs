@@ -6,6 +6,10 @@ using UnityEngine.UI;
 public class GameManager : MonoSingleton<GameManager>
 {
     [SerializeField]
+    private Transform moneyTransform;
+    [SerializeField]
+    private Transform waveTransform;
+    [SerializeField]
     private Text clearText;
     [SerializeField]
     private GameObject hihihihihihi;
@@ -50,6 +54,10 @@ public class GameManager : MonoSingleton<GameManager>
     public int GetMoney(){return money;}
     public void AddMoney(int money){
         this.money += money;
+        Transform textTransform = AllPoolManager.Instance.GetObjTransform(32, moneyTransform);
+        textTransform.localPosition = Vector3.zero;
+        textTransform.localScale = new Vector3(1f, 1f, 1f);
+        textTransform.gameObject.SetActive(true);
         moneyText.text = string.Format("Money:${0}", this.money);
     }
     public void BumbHello(){

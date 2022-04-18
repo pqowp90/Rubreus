@@ -7,7 +7,7 @@ public class LoadAPI : MonoBehaviour
 {
     public bool done;
     [SerializeField]
-    private const string URL = "https://docs.google.com/spreadsheets/d/1NXGvm20BzzGt2KcDWHzhMR1geS_7gzQCvUoxdcfXTd0/export?format=tsv&range=A2:F11";
+    private const string URL = "https://docs.google.com/spreadsheets/d/1NXGvm20BzzGt2KcDWHzhMR1geS_7gzQCvUoxdcfXTd0/export?format=tsv&range=A2:G11";
     [SerializeField]
     private EnemySO enemySO;
     private void Start(){
@@ -20,7 +20,6 @@ public class LoadAPI : MonoBehaviour
         SetInfo(www.downloadHandler.text);
     }
     private void SetInfo(string tsv){
-        
         
         string[] row = tsv.Split('\n');
         int rowSize = row.Length;
@@ -37,6 +36,7 @@ public class LoadAPI : MonoBehaviour
                 targetEnemy.attackDeley = float.Parse(column[3]);
                 targetEnemy.attackRange = float.Parse(column[4]);
                 targetEnemy.index = int.Parse(column[5]);
+                targetEnemy.money = int.Parse(column[6]);
             }
         }
         done = true;
