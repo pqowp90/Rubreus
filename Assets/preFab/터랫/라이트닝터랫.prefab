@@ -464,8 +464,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
-  lifeTime: 100
-  maxLifeTime: 100
+  lifeTime: 75
+  maxLifeTime: 75
   rangePotap: {fileID: 0}
   lifeCutPerSecond: 0
 --- !u!58 &6508056825468291787

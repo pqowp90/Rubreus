@@ -46,6 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c424e629ba58a8049ad010e2db2ec7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waveText: {fileID: 0}
+  hi: {fileID: 0}
+  hello: 0
   waves:
   - sponers:
     - Name: 1
@@ -1008,73 +1011,465 @@ MonoBehaviour:
   - sponers:
     - Name: 41
       enemySpones:
-      - Index: 10
-        deley: 0.2
+      - Index: 21
+        deley: 0.4
         SponePos: {fileID: 6531072888769389815}
-        Num: 5
+        Num: 30
+      - Index: 23
+        deley: 0.2
+        SponePos: {fileID: 6531072888745447606}
+        Num: 25
+    - Name: 41
+      enemySpones:
+      - Index: 22
+        deley: 0.6
+        SponePos: {fileID: 6531072888745447606}
+        Num: 30
+      - Index: 23
+        deley: 0.2
+        SponePos: {fileID: 6531072888745447606}
+        Num: 25
+      - Index: 24
+        deley: 0.4
+        SponePos: {fileID: 6531072888769389815}
+        Num: 30
+      - Index: 25
+        deley: 0.3
+        SponePos: {fileID: 6531072888532023523}
+        Num: 20
+    - Name: 41
+      enemySpones:
+      - Index: 21
+        deley: 0.3
+        SponePos: {fileID: 6531072888532023523}
+        Num: 15
+      - Index: 23
+        deley: 0.4
+        SponePos: {fileID: 6531072888532023523}
+        Num: 25
+      - Index: 27
+        deley: 0.8
+        SponePos: {fileID: 6531072888769389815}
+        Num: 30
+      - Index: 26
+        deley: 0.6
+        SponePos: {fileID: 6531072888769389815}
+        Num: 30
   - sponers:
     - Name: 42
       enemySpones:
-      - Index: 10
+      - Index: 23
         deley: 0.2
+        SponePos: {fileID: 6531072888532023523}
+        Num: 35
+      - Index: 21
+        deley: 0.4
+        SponePos: {fileID: 6531072888745447606}
+        Num: 30
+      - Index: 22
+        deley: 0.3
         SponePos: {fileID: 6531072888769389815}
-        Num: 5
+        Num: 25
+      - Index: 24
+        deley: 0.3
+        SponePos: {fileID: 6531072888769389815}
+        Num: 30
+    - Name: 42
+      enemySpones:
+      - Index: 24
+        deley: 0.3
+        SponePos: {fileID: 6531072888745447606}
+        Num: 30
+      - Index: 23
+        deley: 0.2
+        SponePos: {fileID: 6531072888745447606}
+        Num: 25
+      - Index: 25
+        deley: 0.25
+        SponePos: {fileID: 6531072888769389815}
+        Num: 30
+    - Name: 42
+      enemySpones:
+      - Index: 26
+        deley: 0.8
+        SponePos: {fileID: 6531072888532023523}
+        Num: 30
+      - Index: 22
+        deley: 0.2
+        SponePos: {fileID: 6531072888532023523}
+        Num: 20
+      - Index: 21
+        deley: 0.25
+        SponePos: {fileID: 6531072888769389815}
+        Num: 30
   - sponers:
     - Name: 43
       enemySpones:
-      - Index: 10
+      - Index: 23
         deley: 0.2
         SponePos: {fileID: 6531072888769389815}
-        Num: 5
+        Num: 35
+      - Index: 21
+        deley: 0.3
+        SponePos: {fileID: 6531072888769389815}
+        Num: 30
+      - Index: 22
+        deley: 0.35
+        SponePos: {fileID: 6531072888532023523}
+        Num: 25
+      - Index: 24
+        deley: 0.3
+        SponePos: {fileID: 6531072888532023523}
+        Num: 40
+      - Index: 26
+        deley: 0.5
+        SponePos: {fileID: 6531072888532023523}
+        Num: 15
+    - Name: 43
+      enemySpones:
+      - Index: 25
+        deley: 0.4
+        SponePos: {fileID: 6531072888745447606}
+        Num: 30
+      - Index: 23
+        deley: 0.2
+        SponePos: {fileID: 6531072888745447606}
+        Num: 30
+      - Index: 24
+        deley: 0.25
+        SponePos: {fileID: 6531072888745447606}
+        Num: 20
+      - Index: 22
+        deley: 0.3
+        SponePos: {fileID: 6531072888532023523}
+        Num: 20
+    - Name: 43
+      enemySpones:
+      - Index: 21
+        deley: 0.3
+        SponePos: {fileID: 6531072888769389815}
+        Num: 40
+      - Index: 26
+        deley: 0.25
+        SponePos: {fileID: 6531072888769389815}
+        Num: 25
   - sponers:
     - Name: 44
       enemySpones:
-      - Index: 10
+      - Index: 21
+        deley: 0.25
+        SponePos: {fileID: 6531072888769389815}
+        Num: 35
+      - Index: 22
+        deley: 0.3
+        SponePos: {fileID: 6531072888745447606}
+        Num: 25
+      - Index: 23
         deley: 0.2
         SponePos: {fileID: 6531072888769389815}
-        Num: 5
+        Num: 25
+      - Index: 24
+        deley: 0.4
+        SponePos: {fileID: 6531072888532023523}
+        Num: 40
+    - Name: 44
+      enemySpones:
+      - Index: 21
+        deley: 0.2
+        SponePos: {fileID: 6531072888745447606}
+        Num: 35
+      - Index: 25
+        deley: 0.3
+        SponePos: {fileID: 6531072888769389815}
+        Num: 30
+      - Index: 22
+        deley: 0.25
+        SponePos: {fileID: 6531072888532023523}
+        Num: 50
+      - Index: 26
+        deley: 0.4
+        SponePos: {fileID: 6531072888532023523}
+        Num: 35
+    - Name: 44
+      enemySpones:
+      - Index: 26
+        deley: 0.5
+        SponePos: {fileID: 6531072888769389815}
+        Num: 10
+      - Index: 24
+        deley: 0.2
+        SponePos: {fileID: 6531072888745447606}
+        Num: 40
+      - Index: 23
+        deley: 0.2
+        SponePos: {fileID: 6531072888769389815}
+        Num: 25
   - sponers:
     - Name: 45
       enemySpones:
-      - Index: 10
+      - Index: 22
         deley: 0.2
         SponePos: {fileID: 6531072888769389815}
-        Num: 5
+        Num: 40
+      - Index: 23
+        deley: 0.1
+        SponePos: {fileID: 6531072888745447606}
+        Num: 60
+      - Index: 24
+        deley: 0.25
+        SponePos: {fileID: 6531072888769389815}
+        Num: 40
+      - Index: 26
+        deley: 0.3
+        SponePos: {fileID: 6531072888745447606}
+        Num: 25
+    - Name: 45
+      enemySpones:
+      - Index: 22
+        deley: 0.25
+        SponePos: {fileID: 6531072888769389815}
+        Num: 30
+      - Index: 24
+        deley: 0.2
+        SponePos: {fileID: 6531072888769389815}
+        Num: 40
+      - Index: 26
+        deley: 0.2
+        SponePos: {fileID: 6531072888769389815}
+        Num: 15
+    - Name: 45
+      enemySpones:
+      - Index: 22
+        deley: 0.2
+        SponePos: {fileID: 6531072888769389815}
+        Num: 10
+      - Index: 23
+        deley: 0.2
+        SponePos: {fileID: 6531072888532023523}
+        Num: 20
+      - Index: 26
+        deley: 0.425
+        SponePos: {fileID: 6531072888769389815}
+        Num: 40
   - sponers:
     - Name: 46
       enemySpones:
-      - Index: 10
+      - Index: 21
+        deley: 0.4
+        SponePos: {fileID: 6531072888769389815}
+        Num: 40
+      - Index: 22
+        deley: 0.25
+        SponePos: {fileID: 6531072888745447606}
+        Num: 30
+      - Index: 24
+        deley: 0.3
+        SponePos: {fileID: 6531072888769389815}
+        Num: 40
+      - Index: 25
+        deley: 0.2
+        SponePos: {fileID: 6531072888532023523}
+        Num: 30
+    - Name: 46
+      enemySpones:
+      - Index: 23
         deley: 0.2
         SponePos: {fileID: 6531072888769389815}
-        Num: 5
+        Num: 40
+      - Index: 22
+        deley: 0.25
+        SponePos: {fileID: 6531072888769389815}
+        Num: 25
+      - Index: 21
+        deley: 0.3
+        SponePos: {fileID: 6531072888745447606}
+        Num: 30
+      - Index: 26
+        deley: 0.45
+        SponePos: {fileID: 6531072888532023523}
+        Num: 50
+    - Name: 46
+      enemySpones:
+      - Index: 23
+        deley: 0.2
+        SponePos: {fileID: 6531072888769389815}
+        Num: 20
+      - Index: 24
+        deley: 0.25
+        SponePos: {fileID: 6531072888769389815}
+        Num: 40
   - sponers:
     - Name: 47
       enemySpones:
-      - Index: 10
+      - Index: 21
+        deley: 0.4
+        SponePos: {fileID: 6531072888745447606}
+        Num: 50
+      - Index: 22
+        deley: 0.3
+        SponePos: {fileID: 6531072888532023523}
+        Num: 25
+      - Index: 26
+        deley: 0.7
+        SponePos: {fileID: 6531072888745447606}
+        Num: 20
+    - Name: 47
+      enemySpones:
+      - Index: 23
         deley: 0.2
         SponePos: {fileID: 6531072888769389815}
+        Num: 40
+      - Index: 24
+        deley: 0.2
+        SponePos: {fileID: 6531072888769389815}
+        Num: 40
+      - Index: 25
+        deley: 0.3
+        SponePos: {fileID: 6531072888745447606}
+        Num: 40
+    - Name: 47
+      enemySpones:
+      - Index: 26
+        deley: 0.3
+        SponePos: {fileID: 6531072888532023523}
+        Num: 30
+      - Index: 22
+        deley: 0.2
+        SponePos: {fileID: 6531072888532023523}
         Num: 5
+    - Name: 47
+      enemySpones:
+      - Index: 23
+        deley: 0.2
+        SponePos: {fileID: 6531072888745447606}
+        Num: 20
+      - Index: 24
+        deley: 0.2
+        SponePos: {fileID: 6531072888745447606}
+        Num: 40
+      - Index: 26
+        deley: 0.3
+        SponePos: {fileID: 6531072888769389815}
+        Num: 30
   - sponers:
     - Name: 48
       enemySpones:
-      - Index: 10
+      - Index: 23
         deley: 0.2
         SponePos: {fileID: 6531072888769389815}
-        Num: 5
+        Num: 30
+      - Index: 24
+        deley: 0.25
+        SponePos: {fileID: 6531072888745447606}
+        Num: 40
+      - Index: 25
+        deley: 0.3
+        SponePos: {fileID: 6531072888769389815}
+        Num: 30
+      - Index: 22
+        deley: 0.4
+        SponePos: {fileID: 6531072888532023523}
+        Num: 30
+    - Name: 48
+      enemySpones:
+      - Index: 21
+        deley: 0.3
+        SponePos: {fileID: 6531072888769389815}
+        Num: 40
+      - Index: 22
+        deley: 0.25
+        SponePos: {fileID: 6531072888532023523}
+        Num: 15
+      - Index: 26
+        deley: 0.55
+        SponePos: {fileID: 6531072888745447606}
+        Num: 50
+      - Index: 24
+        deley: 0.25
+        SponePos: {fileID: 6531072888745447606}
+        Num: 40
+    - Name: 48
+      enemySpones:
+      - Index: 22
+        deley: 0.2
+        SponePos: {fileID: 6531072888769389815}
+        Num: 15
   - sponers:
     - Name: 49
       enemySpones:
-      - Index: 10
-        deley: 0.2
+      - Index: 21
+        deley: 0.4
         SponePos: {fileID: 6531072888769389815}
-        Num: 5
+        Num: 40
+      - Index: 22
+        deley: 0.3
+        SponePos: {fileID: 6531072888769389815}
+        Num: 30
+      - Index: 23
+        deley: 0.2
+        SponePos: {fileID: 6531072888532023523}
+        Num: 35
+    - Name: 49
+      enemySpones:
+      - Index: 24
+        deley: 0.4
+        SponePos: {fileID: 6531072888769389815}
+        Num: 80
+      - Index: 25
+        deley: 0.2
+        SponePos: {fileID: 6531072888745447606}
+        Num: 30
+      - Index: 23
+        deley: 0.2
+        SponePos: {fileID: 6531072888745447606}
+        Num: 35
+    - Name: 49
+      enemySpones:
+      - Index: 21
+        deley: 0.3
+        SponePos: {fileID: 6531072888769389815}
+        Num: 40
+      - Index: 22
+        deley: 0.35
+        SponePos: {fileID: 6531072888769389815}
+        Num: 30
   - sponers:
     - Name: 50
       enemySpones:
+      - Index: 21
+        deley: 0.4
+        SponePos: {fileID: 6531072888769389815}
+        Num: 100
+      - Index: 22
+        deley: 0.35
+        SponePos: {fileID: 6531072888745447606}
+        Num: 80
+      - Index: 23
+        deley: 0.2
+        SponePos: {fileID: 6531072888532023523}
+        Num: 50
+      - Index: 24
+        deley: 0.3
+        SponePos: {fileID: 6531072888745447606}
+        Num: 60
+    - Name: 50
+      enemySpones:
+      - Index: 23
+        deley: 0.2
+        SponePos: {fileID: 6531072888769389815}
+        Num: 40
+      - Index: 25
+        deley: 0.25
+        SponePos: {fileID: 6531072888769389815}
+        Num: 50
       - Index: 10
         deley: 0.2
         SponePos: {fileID: 6531072888769389815}
         Num: 5
+      - Index: 24
+        deley: 0.3
+        SponePos: {fileID: 6531072888769389815}
+        Num: 40
   enemys: []
   wave: 0
 --- !u!1 &6531072888532023324
