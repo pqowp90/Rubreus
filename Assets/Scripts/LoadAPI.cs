@@ -17,6 +17,7 @@ public class LoadAPI : MonoBehaviour
         UnityWebRequest www = UnityWebRequest.Get(URL);
         
         yield return www.SendWebRequest();
+        Debug.Log(www.downloadHandler.text);
         SetInfo(www.downloadHandler.text);
     }
     private void SetInfo(string tsv){

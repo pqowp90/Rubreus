@@ -16,60 +16,70 @@ MonoBehaviour:
   - enemtName: "\uAE30\uBCF8\uBCD1"
     index: 10
     maxHp: 1
-    damage: 10
+    damage: 9
     attackDeley: 1
-    attackRange: 0.7
+    attackRange: 0.8
+    money: 5
   - enemtName: "\uBC29\uD328\uBCD1"
     index: 19
-    maxHp: 130
-    damage: 7
-    attackDeley: 1.08
-    attackRange: 0.9
+    maxHp: 160
+    damage: 4
+    attackDeley: 1.1
+    attackRange: 1.1
+    money: 6
   - enemtName: "\uC0BD\uBCD1\uC0AC"
-    index: 22
-    maxHp: 130
-    damage: 16
-    attackDeley: 1
-    attackRange: 0.9
+    index: 20
+    maxHp: 80
+    damage: 18
+    attackDeley: 0.5
+    attackRange: 1
+    money: 7
   - enemtName: "\uB3C4\uB07C\uBCD1"
     index: 22
-    maxHp: 250
-    damage: 23
-    attackDeley: 1.08
-    attackRange: 0.9
+    maxHp: 230
+    damage: 31
+    attackDeley: 1.2
+    attackRange: 1.3
+    money: 9
   - enemtName: "\uB9DD\uCE58\uBCD1"
     index: 21
     maxHp: 200
-    damage: 27
-    attackDeley: 1.5
-    attackRange: 0.9
+    damage: 28
+    attackDeley: 1.3
+    attackRange: 1.3
+    money: 8
   - enemtName: "\uAC15\uD654 \uAE30\uBCF8\uBCD1"
     index: 23
-    maxHp: 80
-    damage: 10
-    attackDeley: 1
-    attackRange: 0.7
+    maxHp: 70
+    damage: 11
+    attackDeley: 0.9
+    attackRange: 0.8
+    money: 7
   - enemtName: "\uAC15\uD654 \uBC29\uD328\uBCD1"
     index: 24
-    maxHp: 150
-    damage: 7
-    attackDeley: 1.08
-    attackRange: 0.9
+    maxHp: 215
+    damage: 6
+    attackDeley: 1
+    attackRange: 1.2
+    money: 9
   - enemtName: "\uAC15\uD654 \uC0BD\uBCD1\uC0AC"
     index: 25
-    maxHp: 150
-    damage: 16
-    attackDeley: 1
-    attackRange: 0.9
+    maxHp: 105
+    damage: 20
+    attackDeley: 0.4
+    attackRange: 1.1
+    money: 11
   - enemtName: "\uAC15\uD654 \uB3C4\uB07C\uBCD1"
-    index: 26
-    maxHp: 270
-    damage: 23
-    attackDeley: 1.08
-    attackRange: 0.9
-  - enemtName: "\uAC15\uD654 \uB9DD\uCE58\uBCD1"
     index: 27
-    maxHp: 220
-    damage: 27
-    attackDeley: 1.5
-    attackRange: 0.9
+    maxHp: 290
+    damage: 34
+    attackDeley: 1.1
+    attackRange: 1.4
+    money: 15
+  - enemtName: "\uAC15\uD654 \uB9DD\uCE58\uBCD1"
+    index: 26
+    maxHp: 250
+    damage: 31
+    attackDeley: 1.2
+    attackRange: 1.4
+    money: 13
